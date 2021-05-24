@@ -9,57 +9,25 @@ import BlogPostPreviewList from "../components/blog-post-preview-list";
 import Container from "../components/container";
 import GraphQLErrorList from "../components/graphql-error-list";
 import SEO from "../components/seo";
-import Layout from "../containers/layout";
+import Layout from "../components/Layout";
+
+import "../styles/GlobalDOMStyle.css"
+
+import { Link } from "gatsby"
+
+// import Image from "../components/image"
+import LatestWorks from "../components/Home/LatestWorks"
+import Pong from "../components/Home/Pong"
+import { ContainHero, HeroText } from "../styles/GlobalStyles"
+import { Section } from "../styles/GlobalStyles"
+import { Hyperlink } from "../components/Common/Hyperlink"
 
 export const query = graphql`
-  fragment SanityImage on SanityMainImage {
-    crop {
-      _key
-      _type
-      top
-      bottom
-      left
-      right
-    }
-    hotspot {
-      _key
-      _type
-      x
-      y
-      height
-      width
-    }
-    asset {
-      _id
-    }
-  }
-
   query IndexPageQuery {
     site: sanitySiteSettings(_id: { regex: "/(drafts.|)siteSettings/" }) {
       title
       description
       keywords
-    }
-    posts: allSanityPost(
-      limit: 6
-      sort: { fields: [publishedAt], order: DESC }
-      filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
-    ) {
-      edges {
-        node {
-          id
-          publishedAt
-          mainImage {
-            ...SanityImage
-            alt
-          }
-          title
-          _rawExcerpt
-          slug {
-            current
-          }
-        }
-      }
     }
   }
 `;
@@ -74,14 +42,7 @@ const IndexPage = (props) => {
       </Layout>
     );
   }
-
   const site = (data || {}).site;
-  const postNodes = (data || {}).posts
-    ? mapEdgesToNodes(data.posts)
-        .filter(filterOutDocsWithoutSlugs)
-        .filter(filterOutDocsPublishedInTheFuture)
-    : [];
-
   if (!site) {
     throw new Error(
       'Missing "Site settings". Open the studio at http://localhost:3333 and add some content to "Site settings" and restart the development server.'
@@ -95,17 +56,21 @@ const IndexPage = (props) => {
         description={site.description}
         keywords={site.keywords}
       />
-      <Container>
-        <h1 hidden>Welcome to {site.title}</h1>
-        {postNodes && (
-          <BlogPostPreviewList
-            title="Latest blog posts"
-            nodes={postNodes}
-            browseMoreHref="/archive/"
-          />
-        )}
-      </Container>
-    </Layout>
+      <Link to="/about">
+      <ContainHero>
+        <HeroText>
+          Hello! I’m a creative engineer based in Sydney. I design and implement
+          solutions to the world&apos;s toughest problems.
+        </HeroText>
+        <Hyperlink to="/about" text="About me." />
+      </ContainHero>
+    </Link>
+
+    <Section>
+      <LatestWorks />
+      <Pong />
+    </Section>
+      </Layout>
   );
 };
 
