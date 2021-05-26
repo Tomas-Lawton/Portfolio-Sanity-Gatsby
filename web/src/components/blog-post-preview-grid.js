@@ -9,9 +9,9 @@ function BlogPostPreviewGrid(props) {
       {props.title && <h2 className={styles.headline}>{props.title}</h2>}
       <ul className={styles.grid}>
         {props.nodes &&
-          props.nodes.map((node) => (
-            <li key={node.id}>
-              <BlogPostPreview {...node} />
+          props.nodes.map((node, index) => (
+            <li style={{background: "#151515"}} key={node.id}>
+              <BlogPostPreview {...node} index={index}/>
             </li>
           ))}
       </ul>

@@ -13,9 +13,9 @@ import {
   filterOutDocsWithoutSlugs,
   mapEdgesToNodes,
 } from "../lib/helpers";
-import BlogPostPreviewList from "../components/blog-post-preview-list";
 import Container from "../components/container";
 import GraphQLErrorList from "../components/graphql-error-list";
+import BlogPostPreviewGrid from "../components/blog-post-preview-grid";
 
 
 export const query = graphql`
@@ -48,7 +48,6 @@ export const query = graphql`
       keywords
     }
     posts: allSanityPost(
-      limit: 6
       sort: { fields: [publishedAt], order: DESC }
       filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
     ) {
@@ -56,6 +55,9 @@ export const query = graphql`
         node {
           id
           publishedAt
+          categories {
+            title
+          }
           mainImage {
             ...SanityImage
             alt
@@ -98,18 +100,15 @@ const Work = props => {
   return (
   <Layout>
     <SEO title="Home" />
-    <ContainHero>
-      <HeroText>My Projects</HeroText>
-      {/* <ContainItems>Some of the projects I've made!</ContainItems> */}
-    </ContainHero>
+
     <div style={{ width: "100%", height: "100%" }}>
     <Container>
         {/* <h1 hidden>Welcome to {site.title}</h1> */}
         {postNodes && (
-          <BlogPostPreviewList
+          <BlogPostPreviewGrid
             title="Latest blog posts"
             nodes={postNodes}
-            browseMoreHref="/archive/"
+            // browseMoreHref="/archive/"
           />
         )}
       </Container>

@@ -16,7 +16,7 @@ const QRCode = () => (
   <Layout>
     <SEO title="Home" />
     <QRContainer> 
-        <img style= {{width: '30vw', height: '30vw'}} src={QRDemo} />
+        <img style= {{width: '30vw', height: 'auto'}} src={QRDemo} />
     </QRContainer> 
   </Layout>
 )
