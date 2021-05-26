@@ -1,6 +1,5 @@
 import * as styles from "./blog-post.module.css";
 import { differenceInDays, formatDistance, format } from "date-fns";
-import AuthorList from "./author-list";
 import Container from "./container";
 import PortableText from "./portableText";
 import React from "react";
@@ -45,7 +44,6 @@ function BlogPost(props) {
                   : format(new Date(publishedAt), "MMMM Mo, yyyy")}
               </div>
             )}
-            {authors && <AuthorList items={authors} title="Authors" />}
             {categories && (
               <div className={styles.categories}>
                 <h3 className={styles.categoriesHeadline}>Categories</h3>
