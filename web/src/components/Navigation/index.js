@@ -11,8 +11,11 @@ const Navigation = () => (
       <HomeLink />
     <NavLinks />
       <CallToAction>
-      <BigLink to="/contact" text="Hire Me"/>
-      <a href="/contact"><img height="45%" style={{marginBottom: "0"}} src={ChevronForward}/></a>
+      <BigLink to="/contact" text="Hire Me">
+      </BigLink>
+      <Link to="/contact" style={{ marginBottom: "0", display: 'flex', justifyContent: 'center'}}>
+      <img src={ChevronForward}/>
+      </Link>
       </CallToAction>
       </NavContainer>
 );

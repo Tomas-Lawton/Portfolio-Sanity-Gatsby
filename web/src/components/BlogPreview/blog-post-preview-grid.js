@@ -1,8 +1,8 @@
 import * as styles from "./blog-post-preview-grid.module.css";
-import BlogPostPreview from "./blog-post-preview";
+import BlogPostPreview from "../BlogPost";
 import { Link } from "gatsby";
 import React from "react";
-
+import { PreviewListItem } from "./Style"
 function BlogPostPreviewGrid(props) {
   return (
     <div className={styles.root}>
@@ -10,9 +10,9 @@ function BlogPostPreviewGrid(props) {
       <ul className={styles.grid}>
         {props.nodes &&
           props.nodes.map((node, index) => (
-            <li style={{background: "#151515", paddingBottom: "5vh"}} key={node.id}>
+            <PreviewListItem key={node.id}>
               <BlogPostPreview {...node} index={index}/>
-            </li>
+            </PreviewListItem>
           ))}
       </ul>
       {props.browseMoreHref && (

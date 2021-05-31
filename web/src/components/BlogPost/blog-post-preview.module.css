@@ -1,5 +1,5 @@
-@import '../styles/custom-media.css';
-@import '../styles/custom-properties.css';
+@import '../../styles/custom-media.css';
+@import '../../styles/custom-properties.css';
 .root {
     display: flex;
     color: inherit;
@@ -45,7 +45,8 @@
 
 .flex {
     display: flex;
-    align-items: center;
+    /* align-items: center; */
+    align-items: flex-end;
     justify-content: space-between;
     width: 100%;
     padding: 5vw 5vw 0 5vw;

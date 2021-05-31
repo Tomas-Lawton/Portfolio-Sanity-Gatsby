@@ -97,6 +97,10 @@ export const MinimalText = styled.p `
   // width: ${props => (props.width ? props.width : "100%")}
 `
 
+export const Message = styled.p `
+font-family: Open Sans;
+`
+
 export const FullContainer = styled.div `
 width: 100%;
 height: 100%;
@@ -105,4 +109,58 @@ display: flex;
 justify-content: center; 
 align-items: center;
 // padding: 5vw;
+`
+
+export const ContactCard = styled.div `
+display: flex;
+flex-direction: column;
+ padding: 2vw; 
+ width: 100%;
+background: #131313;
+box-shadow: 1px 2px 6px 3px rgba(0, 0, 0, 0.49);
+`
+
+export const MyForm = styled.div `
+width: 100%; 
+display: flex; 
+flex-direction: column;
+font-family: Open Sans;
+font-weight: 400;
+
+input, select, textarea{
+  color: #ffffff;
+}
+`
+
+export const ContactField = styled.input `
+border-style: solid;
+margin: 10px 0;
+padding: 10px;
+background: #181818;
+border-radius: 10px;
+
+color: #ffffff;
+border-color: #ffffff;
+
+&:focus {
+  outline: none;
+}
+
+// linear-gradient(246.69deg, #3139FF 5.65%, #FF9558 57.75%, #FFDE32 99.13%);
+`;
+
+export const Textarea = styled.textarea `
+border-style: solid;
+margin: 10px 0;
+padding: 10px;
+background: rgba(255, 255, 255, .02);
+border-radius: 10px;
+width: 100%;
+color: #ffffff;
+resize: none;
+border-color: #ffffff;
+
+&:focus {
+  outline: none;
+}
 `

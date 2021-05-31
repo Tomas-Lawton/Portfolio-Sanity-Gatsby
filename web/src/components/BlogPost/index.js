@@ -1,12 +1,13 @@
 import * as styles from "./blog-post-preview.module.css";
-import { buildImageObj, cn, getBlogUrl } from "../lib/helpers";
+import { buildImageObj, cn, getBlogUrl } from "../../lib/helpers";
 import { Link } from "gatsby";
-import PortableText from "./portableText";
+import PortableText from "../portableText";
 import React from "react";
 import { format } from "date-fns";
-import { imageUrlFor } from "../lib/image-url";
-import ArrowLink from "../components/Common/ArrowLink"
-import { responsiveTitle3 } from "./typography.module.css";
+import { imageUrlFor } from "../../lib/image-url";
+import ArrowLink from "../Common/ArrowLink"
+import { responsiveTitle3 } from "../typography.module.css";
+import { BigNumber, Fixer } from "./Style"
 
 function BlogPostPreview(props) {
   return (
@@ -50,13 +51,13 @@ function BlogPostPreview(props) {
       <div className={styles.flex}>
         <ArrowLink to={getBlogUrl(props.publishedAt, props.slug.current)} />
         <div style={{ width: '60%', height: "8vh" }}>
-          <div style={{ display: "flex", justifyContent: 'flex-end', margin: '1vh 0'}}>
-          <h2 stlye={{position: "relative", fontSize: '10vh'}}>0{props.index+1}</h2>
-          </div>
+          <Fixer>
+            <BigNumber>0{props.index+1}</BigNumber>
+          </Fixer>
           <hr />
           <div style={{ display: "flex", justifyContent: 'flex-end'}}>
             {props.categories.map(cat => (
-              <p style={{ marginLeft: "4vw" }}>{cat.title}</p>
+              <p style={{ marginLeft: "4vw", marginBottom: "0" }}>{cat.title}</p>
             ))}
           </div>
         </div>

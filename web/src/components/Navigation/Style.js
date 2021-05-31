@@ -16,15 +16,8 @@ padding: 5vw 3.5vw 5vh 3.5vw;
 export const CallToAction = styled.div `
 display: flex;
 flex-direction: column;
-height: 10%;
+height: 13%;
 justify-content: space-between;
-// margin: 4vh 3vh 0 3vh;
 font-weight: 400;
 width: 100%;
 `;
-
-
-// export const ChevronLink = styled(link)
-// `
-
-// `

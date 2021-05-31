@@ -15,7 +15,7 @@ import {
 } from "../lib/helpers";
 import Container from "../components/container";
 import GraphQLErrorList from "../components/graphql-error-list";
-import BlogPostPreviewGrid from "../components/blog-post-preview-grid";
+import BlogPostPreviewGrid from "../components/BlogPreview/blog-post-preview-grid";
 
 
 export const query = graphql`
