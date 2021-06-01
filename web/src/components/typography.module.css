@@ -97,7 +97,7 @@
 .responsiveTitle3 {
     font-weight: 600;
     /* font-size: var(--font-large-size); */
-    font-size: 7vh;
+    font-size: 9vh;
     line-height: var(--font-large-line-height);
     margin: 1rem 0 0.5rem;
     @media (--media-min-small) {

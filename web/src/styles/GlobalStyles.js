@@ -117,7 +117,7 @@ flex-direction: column;
  padding: 2vw; 
  width: 100%;
 background: #131313;
-box-shadow: 1px 2px 6px 3px rgba(0, 0, 0, 0.49);
+box-shadow: 1px 6px 17px 3px rgba(0, 0, 0, 0.37);
 `
 
 export const MyForm = styled.div `

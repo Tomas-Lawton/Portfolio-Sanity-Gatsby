@@ -35,6 +35,6 @@ animation-name: slidein;
     }
   }
 
-  width: 3vw; 
+  width: 2vw; 
   height: auto;
   `
