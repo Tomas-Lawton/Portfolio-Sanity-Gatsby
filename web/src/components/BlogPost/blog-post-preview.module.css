@@ -52,7 +52,16 @@
 
 .containBlogPreview {
     display: block;
-    padding: 5vw 5vw 3vh 5vw;
+    padding: 4.8vw 5vw 2.8vh 5vw;
+    transition: 500ms;
+}
+
+.containBlogPreview:hover {
+    padding: 7vw 5vw 3vh 7vw;
+}
+
+.rainbowBar {
+    background: linear-gradient(246.69deg, #3139FF 5.65%, #FF9558 57.75%, #FFDE32 99.13%);
 }
 
 .text {
@@ -64,7 +73,24 @@
 }
 
 .title {
+    /* color: linear-gradient(246.69deg, #3139FF 5.65%, #FF9558 57.75%, #FFDE32 99.13%); */
     text-transform: uppercase;
+    font-weight: 600;
+    font-size: 8vh;
+    line-height: 8vh;
+    margin: 1rem 0 0.5rem;
+    @media (--media-min-small) {
+        font-size: var(--font-large-size);
+        line-height: var(--font-large-line-height);
+    }
+    /* background: linear-gradient(246.69deg, #3139FF 5.65%, #FF9558 57.75%, #FFDE32 99.13%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent; */
+    @media (--media-min-medium) {
+        font-size: var(--font-title3-size);
+        line-height: var(--font-title3-line-height);
+    }
     @media (hover: hover) {
         @nest .root:hover & {
             text-decoration: underline;

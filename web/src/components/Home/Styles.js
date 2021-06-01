@@ -31,25 +31,28 @@ export const ToEnd = styled.div `
 }
 `
 
-export const SectionRight = styled.div `
+export const SectionRight = styled.a `
 background-color: #151515;
 width: 49%;
 // width: 100%;
 // display: inline-block;
-// height: 100%;
+height: ${props => props.isFull ? "100%" : "50%"};
+width: ${props => props.isFull ? "100%" : "50%"};
 padding: 5vh 5vw;
 margin: 0;
 display: flex;
 flex-direction: column;
 justify-content: space-between;
+
+
 `;
 
 export const RightContent = styled.div `
 // margin: 5vh 5vw 0 5vw;
 // padding: 0 0 5vh 0;
 // margin: 0 5vw 5vh 5vw;
-// height: calc(100% - 10vh);
-height: 100%;
+height: calc(100% - 10px);
+// height: 100%;
 // margin-bottom: 3vh;
 `;
 
@@ -60,5 +63,9 @@ justify-content: space-between;
 h2 {
     font-size: 2vh;
     font-weight: 400;
+}
+
+&:hover {
+    text-decoration: underline;
 }
 `;

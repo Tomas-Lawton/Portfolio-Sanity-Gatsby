@@ -5,6 +5,9 @@ import {Hyperlink} from "../../Common/Hyperlink"
 // import { graphql } from "gatsby"
 import { MinimalText } from "../../../styles/GlobalStyles"
 import GraphQLErrorList from "../../../components/graphql-error-list";
+import { format, isFuture } from "date-fns";
+
+import { getBlogUrl } from "../../../lib/helpers";
 const testMap = [0, 0, 0, 0, 0];
 
 // export const query = graphql`
@@ -48,14 +51,18 @@ function Latest(props) {
   return (
     <SectionLeft>
       <Left>
-        <h1>
+        <h1 style={{fontFamily: "Open Sans"}}>
           Latest Works
         </h1>
 
     {props.works &&
-    props.works.edges.map((item, index) => ( <LatestWorkLink key={index}>
-        <h2>{item.node.title}</h2> <h2 style={{textAlign: "right"}}>{item.node.publishedAt}</h2>
-        </LatestWorkLink>))
+    props.works.edges.map((item, index) => ( 
+      <Link to={getBlogUrl(item.node.publishedAt, item.node.slug.current)}>
+        <LatestWorkLink key={index}>
+          <h2>{item.node.title}</h2> <h2 style={{textAlign: "right"}}>{format(new Date(item.node.publishedAt), "MM/yyyy")}</h2>
+        </LatestWorkLink>
+      </Link>
+      ))
         }
       </Left>
       <ToEnd>

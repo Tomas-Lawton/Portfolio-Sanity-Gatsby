@@ -2,14 +2,27 @@ import * as styles from "./blog-post-preview.module.css";
 import { buildImageObj, cn, getBlogUrl } from "../../lib/helpers";
 import { Link } from "gatsby";
 import PortableText from "../portableText";
-import React from "react";
+import React, { useEffect } from "react";
 import { format } from "date-fns";
 import { imageUrlFor } from "../../lib/image-url";
 import ArrowLink from "../Common/ArrowLink"
-import { responsiveTitle3 } from "../typography.module.css";
 import { BigNumber, Fixer } from "./Style"
 
 function BlogPostPreview(props) {
+  useEffect(() => {
+    window.addEventListener('mouseenter', () => {
+      console.log('hovered');
+    })
+    window.addEventListener('mouseleave', () => {
+      console.log('leave');
+    })
+
+    // return (
+    //   window.removeEventListener('mouseenter', () => {
+    //     console.log('hovered');
+    //   })
+    // )
+  }, []);
   return (
       <Link to={getBlogUrl(props.publishedAt, props.slug.current)}>
       <div className={styles.containBlogPreview}>
@@ -17,7 +30,7 @@ function BlogPostPreview(props) {
           <div className={styles.flex}>
             <div className={styles.left}>
               <div className={styles.text}>
-                <h3 className={cn(responsiveTitle3, styles.title)}>{props.title}</h3>
+                <h3 className={cn(styles.title)}>{props.title}</h3>
                 {props._rawExcerpt && (
                   <div className={styles.excerpt}>
                     <PortableText blocks={props._rawExcerpt} />
@@ -50,7 +63,7 @@ function BlogPostPreview(props) {
             <Fixer>
               <BigNumber>0{props.index+1}</BigNumber>
             </Fixer>
-            <hr />
+            <hr className={styles.rainbowBar}/>
             <div style={{ display: "flex", justifyContent: 'flex-end'}}>
               {props.categories.map(cat => (
                 <p style={{ marginLeft: "4vw", marginBottom: "0" }}>{cat.title}</p>

@@ -101,6 +101,12 @@ export const Message = styled.p `
 font-family: Open Sans;
 `
 
+export const Contact = styled.h1 `
+font-family: Merriweather;
+font-weight: 400;
+font-size: 8vh;
+`
+
 export const FullContainer = styled.div `
 width: 100%;
 height: 100%;
@@ -114,10 +120,10 @@ align-items: center;
 export const ContactCard = styled.div `
 display: flex;
 flex-direction: column;
- padding: 2vw; 
- width: 100%;
-background: #131313;
-box-shadow: 1px 6px 17px 3px rgba(0, 0, 0, 0.37);
+// width: 100%;
+// background: #131313;
+// box-shadow: 1px 6px 17px 3px rgba(0, 0, 0, 0.37);
+padding: 2vw;
 `
 
 export const MyForm = styled.div `
@@ -133,27 +139,26 @@ input, select, textarea{
 `
 
 export const ContactField = styled.input `
-border-style: solid;
+border-style: none;
 margin: 10px 0;
-padding: 10px;
-background: #181818;
+padding: 15px;
+background: #1C1C1C;
 border-radius: 10px;
-
+// border: 1px #ffffff;
 color: #ffffff;
 border-color: #ffffff;
 
 &:focus {
   outline: none;
+  background: #1C1C1C;
 }
-
-// linear-gradient(246.69deg, #3139FF 5.65%, #FF9558 57.75%, #FFDE32 99.13%);
 `;
 
 export const Textarea = styled.textarea `
-border-style: solid;
-margin: 10px 0;
-padding: 10px;
-background: rgba(255, 255, 255, .02);
+border-style: none;
+margin: 10px 0 30px 0;
+padding: 15px;
+background: #1C1C1C;
 border-radius: 10px;
 width: 100%;
 color: #ffffff;

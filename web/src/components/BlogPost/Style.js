@@ -11,8 +11,8 @@ position: relative;
 export const BigNumber = styled.h1 `
 font-weight: 400;
 font-family: Merriweather;
-font-size: 20vh;
-margin-top: -24vh;
+font-size: 16vh;
+margin-top: -17vh;
 
 position: absolute
 
