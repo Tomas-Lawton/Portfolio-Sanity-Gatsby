@@ -79,17 +79,17 @@ const IndexPage = (props) => {
       </ContainHero>
     </Link>
 }
-{!isFull ? 
+{!isFull && 
     <Section>
       <LatestWorks works={data.allSanityPost}/>
-      <div style={{width: '50%', height: '100%'}}>
+      {/* <div style={{width: '50%', height: '100%'}}>
       <Pong setPongSize={switchPongSize}/>
-      </div>
+      </div> */}
     </Section>
-    :
-    <div style={{width: '100%', height: '100%'}}>
-    <Pong setPongSize={switchPongSize} isFull={isFull}/>
-    </div>
+    // :
+    // <div style={{width: '100%', height: '100%'}}>
+    // <Pong setPongSize={switchPongSize} isFull={isFull}/>
+    // </div>
 }
       </Layout>
   );

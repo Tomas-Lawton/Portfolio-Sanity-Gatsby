@@ -117,7 +117,7 @@ align-items: center;
 // padding: 5vw;
 `
 
-export const ContactCard = styled.div `
+export const ContactCard = styled.form `
 display: flex;
 flex-direction: column;
 // width: 100%;
@@ -147,7 +147,7 @@ border-radius: 10px;
 // border: 1px #ffffff;
 color: #ffffff;
 border-color: #ffffff;
-
+// box-shadow: rgba(0, 0, 0, 0.01) 0px 4px 12px;
 &:focus {
   outline: none;
   background: #1C1C1C;
@@ -155,6 +155,7 @@ border-color: #ffffff;
 `;
 
 export const Textarea = styled.textarea `
+// box-shadow: rgba(0, 0, 0, 0.01) 0px 4px 12px;
 border-style: none;
 margin: 10px 0 30px 0;
 padding: 15px;

@@ -10,7 +10,9 @@ const About = () => (
     <SEO title="About" />
     <div style={{background: '#151515', height: "100%", width: '100%'}}>
       <div style={{ width: '100%', padding: '5vh 5vw 0 5vw'}}>
-      <ContactCard>
+      <ContactCard   
+      action="https://formspree.io/f/xoqydkwn"
+  method="POST">
         <div style={{ width: '100%', }}>
           <Contact>Say hello</Contact>
           <Message>Send a message to <span style={{fontWeight: 'bold', textDecoration: 'underline'}}>tomaslawton@gmail.com</span> or using the form below!</Message>
@@ -25,7 +27,7 @@ const About = () => (
         </MyForm>
 
         <div style={{ width: '100%', display: 'flex'}}>
-          <Submit text="Send"/>
+          <Submit type="submit" text="Send"/>
         </div>
       </ContactCard>
       </div>
