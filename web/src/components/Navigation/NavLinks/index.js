@@ -5,7 +5,6 @@ import LinkArrow from "../../../images/LinkArrow.svg";
 const NavLinks = () => { 
     const [route, setRoute] = useState(null)
     const NavLinks = [
-        { route: '/about', name: "About" },
         { route: '/work', name: "Work" },
         { route: '/contact', name: "Contact" },
         { route: '/qrcode', name: "QR" }

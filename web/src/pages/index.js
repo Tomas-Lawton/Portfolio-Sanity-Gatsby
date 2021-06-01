@@ -10,7 +10,8 @@ import Pong from "../components/Home/Pong"
 import { ContainHero, HeroText } from "../styles/GlobalStyles"
 import { Section } from "../styles/GlobalStyles"
 import { Hyperlink } from "../components/Common/Hyperlink"
-import Pic from "../images/pic.jpeg"
+import is from "date-fns/esm/locale/is/index.js";
+
 export const query = graphql`
   query IndexPageQuery {
     site: sanitySiteSettings(_id: { regex: "/(drafts.|)siteSettings/" }) {
@@ -82,8 +83,7 @@ const IndexPage = (props) => {
     <Section>
       <LatestWorks works={data.allSanityPost}/>
       <div style={{width: '50%', height: '100%'}}>
-      {/* <Pong setPongSize={switchPongSize}/> */}
-      <img style={{width: '50%', height: '100%'}} src={Pic} />
+      <Pong setPongSize={switchPongSize}/>
       </div>
     </Section>
     :
