@@ -58,7 +58,7 @@ function BlogPostPreview(props) {
           {window.innerWidth > 858 && (
             <div className={styles.rectBox}>
               <Fixer>
-                <BigNumber> 0 {props.index + 1} </BigNumber>
+                <BigNumber>0{props.index + 1}</BigNumber>
               </Fixer>
               <hr className={styles.rainbowBar} />
               <div style={{ display: "flex", justifyContent: "flex-end" }}>

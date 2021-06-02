@@ -1,54 +1,17 @@
 import * as styles from "./blog-post.module.css";
 import { differenceInDays, formatDistance, format } from "date-fns";
-import Container from "../components/container";
+import BlogContainer from "../components/BlogContainer";
 import PortableText from "../components/portableText";
 import React, { useEffect, useState } from "react";
 import { buildImageObj } from "../lib/helpers";
 import { imageUrlFor } from "../lib/image-url";
-// import SimpleImageSlider from "react-simple-image-slider";
 
 function BlogPost(props) {
-  const { _rawBody, categories, title, mainImage, publishedAt } = props;
-  // const [imageList, setImageList] = useState();
-  // const [mainContent, setMainContent] = useState();
-  // useEffect(() => {
-  //   const images = _rawBody.filter((item) => item._type === "mainImage");
-  //   let urls = [];
-  //   console.log(images);
-  //   for (const img of images) {
-  //     urls.push({
-  //       url: img.asset.url,
-  //     });
-  //     // urls.push({
-  //     //   url: imageUrlFor(buildImageObj(img))
-  //     //     .width(1200)
-  //     //     .height(Math.floor((9 / 16) * 1200))
-  //     //     .fit("crop")
-  //     //     .auto("format")
-  //     //     .url(),
-  //     // });
-  //   }
-  //   setImageList(urls);
-  //   setMainContent(_rawBody.filter((item) => item._type !== "mainImage"));
-  // }, []);
+  const { _rawBody, categories, title, publishedAt } = props;
 
   return (
     <article className={styles.root}>
-      {/* <div style={{ position: "relative", overflow: "hidden" }}>
-        {imageList && (
-          <SimpleImageSlider
-            showNavs={true}
-            showBullets={true}
-            navStyle={2}
-            width={1200}
-            height={Math.floor((9 / 16) * 1200)}
-            images={imageList}
-            navSize={50}
-            navMargin={30}
-          />
-        )}
-      </div> */}
-      <Container>
+      <BlogContainer>
         <div className={styles.grid}>
           <div className={styles.mainContent}>
             <h1 className={styles.title}>{title}</h1>
@@ -74,7 +37,7 @@ function BlogPost(props) {
             )}
           </aside>
         </div>
-      </Container>
+      </BlogContainer>
     </article>
   );
 }

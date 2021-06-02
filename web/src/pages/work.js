@@ -1,10 +1,15 @@
-import React from "react"
-import "../styles/GlobalDOMStyle.css"
+import React from "react";
+import "../styles/GlobalDOMStyle.css";
 
-import Layout from "../components/Layout"
+import Layout from "../components/Layout";
 // import Image from "../components/image"
-import SEO from "../components/seo"
-import { ContainHero, HeroText, ContainItems, FullContainer } from "../styles/GlobalStyles"
+import SEO from "../components/seo";
+import {
+  ContainHero,
+  HeroText,
+  ContainItems,
+  FullContainer,
+} from "../styles/GlobalStyles";
 // import Blog from "../templates/blog"
 // import Post from "../components/Post"
 import { graphql } from "gatsby";
@@ -13,10 +18,9 @@ import {
   filterOutDocsWithoutSlugs,
   mapEdgesToNodes,
 } from "../lib/helpers";
-import Container from "../components/container";
+import Container from "../Components/Container";
 import GraphQLErrorList from "../components/graphql-error-list";
 import BlogPostPreviewGrid from "../components/BlogPreview/blog-post-preview-grid";
-
 
 export const query = graphql`
   fragment SanityImage on SanityMainImage {
@@ -73,13 +77,13 @@ export const query = graphql`
   }
 `;
 
-const Work = props => {
+const Work = (props) => {
   const { data, errors } = props;
 
   if (errors) {
     return (
       <Layout>
-        <GraphQLErrorList errors={errors} />
+        <GraphQLErrorList errors={errors} />{" "}
       </Layout>
     );
   }
@@ -98,22 +102,23 @@ const Work = props => {
   }
 
   return (
-  <Layout>
-    <SEO title="Home" />
+    <Layout>
+      <SEO title="Home" />
+      <div style={{ width: "100%", height: "100%" }}>
+        <Container>
+          {" "}
+          {/* <h1 hidden>Welcome to {site.title}</h1> */}{" "}
+          {postNodes && (
+            <BlogPostPreviewGrid
+              title="Latest blog posts"
+              nodes={postNodes}
+              // browseMoreHref="/archive/"
+            />
+          )}{" "}
+        </Container>{" "}
+      </div>{" "}
+    </Layout>
+  );
+};
 
-    <div style={{ width: "100%", height: "100%" }}>
-    <Container>
-        {/* <h1 hidden>Welcome to {site.title}</h1> */}
-        {postNodes && (
-          <BlogPostPreviewGrid
-            title="Latest blog posts"
-            nodes={postNodes}
-            // browseMoreHref="/archive/"
-          />
-        )}
-      </Container>
-    </div>
-  </Layout>
-)};
-
-export default Work
+export default Work;
