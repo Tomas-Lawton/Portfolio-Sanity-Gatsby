@@ -13,11 +13,12 @@ function Pong({ setPongSize, isFull }) {
     }
 
     return (
-    <SectionRight isFull onClick={setPongSize}> 
+    // <SectionRight isFull onClick={setPongSize}> 
+    <SectionRight> 
          <RightContent>
              <Canvas updateScore={updateScore} />
          </RightContent>
-         <div style={{height: '10px', display: "flex", justifyContent:"space-between"}}>    
+         <div style={{position: 'relative', height: '5px', display: "flex", justifyContent:"space-between"}}>    
         <MinimalText setMargin="0" width="30px">{player1}</MinimalText>
          <MinimalText setMargin="0"  width="30px">{player2}</MinimalText>
          </div> 

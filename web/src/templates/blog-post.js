@@ -1,5 +1,5 @@
 import { graphql } from "gatsby";
-import BlogPost from "../components/blog-post";
+import BlogPost from "../pages/blog-post";
 import React from "react";
 import GraphQLErrorList from "../components/graphql-error-list";
 import Layout from "../components/Layout";
@@ -7,7 +7,7 @@ import Container from "../components/container";
 import SEO from "../components/seo";
 import { toPlainText } from "../lib/helpers";
 
-export const query = graphql`
+export const query = graphql `
   query BlogPostTemplateQuery($id: String!) {
     post: sanityPost(id: { eq: $id }) {
       id
@@ -58,28 +58,33 @@ export const query = graphql`
 `;
 
 const BlogPostTemplate = (props) => {
-  const { data, errors } = props;
-  const post = data && data.post;
-  return (
-    <Layout>
-      {errors && <SEO title="GraphQL Error" />}
-      {post && (
-        <SEO
-          title={post.title || "Untitled"}
-          description={toPlainText(post._rawExcerpt)}
-          image={post.mainImage}
-        />
-      )}
+        const { data, errors } = props;
+        const post = data && data.post;
+        return ( <
+            Layout > { errors && < SEO title = "GraphQL Error" / > } {
+                post && ( <
+                    SEO title = { post.title || "Untitled" }
+                    description = { toPlainText(post._rawExcerpt) }
+                    image = { post.mainImage }
+                    />
+                )
+            }
 
-      {errors && (
-        <Container>
-          <GraphQLErrorList errors={errors} />
-        </Container>
-      )}
+            {
+                errors && ( <
+                    Container >
+                    <
+                    GraphQLErrorList errors = { errors }
+                    /> < /
+                    Container >
+                )
+            }
 
-      {post && <BlogPost {...post} />}
-    </Layout>
-  );
-};
+            {
+                post && < BlogPost {...post }
+                />} < /
+                Layout >
+            );
+        };
 
-export default BlogPostTemplate;
+        export default BlogPostTemplate;

@@ -1,7 +1,7 @@
 import * as styles from "./blog-post.module.css";
 import { differenceInDays, formatDistance, format } from "date-fns";
-import Container from "./container";
-import PortableText from "./portableText";
+import Container from "../components/container";
+import PortableText from "../components/portableText";
 import React from "react";
 import { buildImageObj } from "../lib/helpers";
 import { imageUrlFor } from "../lib/image-url";

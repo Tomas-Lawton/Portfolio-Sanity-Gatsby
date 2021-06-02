@@ -33,18 +33,16 @@ export const ToEnd = styled.div `
 
 export const SectionRight = styled.a `
 background-color: #151515;
-width: 49%;
-// width: 100%;
+width: 50%;
 // display: inline-block;
-height: ${props => props.isFull ? "100%" : "50%"};
-width: ${props => props.isFull ? "100%" : "50%"};
+// height: ${props => props.isFull ? "100%" : "50%"};
+// width: ${props => props.isFull ? "100%" : "50%"};
 padding: 5vh 5vw;
+
 margin: 0;
 display: flex;
 flex-direction: column;
 justify-content: space-between;
-
-
 `;
 
 export const RightContent = styled.div `

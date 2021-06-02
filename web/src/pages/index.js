@@ -69,7 +69,7 @@ const IndexPage = (props) => {
         description={site.description}
         keywords={site.keywords}
       />
-     {!isFull &&   <Link to="/about">
+
     <ContainHero>
         <HeroText>
           Hello! I’m a creative engineer based in Sydney. I design and implement
@@ -77,20 +77,12 @@ const IndexPage = (props) => {
         </HeroText>
         <Hyperlink to="/about" text="About me." />
       </ContainHero>
-    </Link>
-}
-{!isFull && 
     <Section>
       <LatestWorks works={data.allSanityPost}/>
-      {/* <div style={{width: '50%', height: '100%'}}>
       <Pong setPongSize={switchPongSize}/>
-      </div> */}
     </Section>
-    // :
-    // <div style={{width: '100%', height: '100%'}}>
-    // <Pong setPongSize={switchPongSize} isFull={isFull}/>
-    // </div>
-}
+  
+
       </Layout>
   );
 };
