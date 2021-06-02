@@ -78,6 +78,7 @@
 
 .rainbowBar {
     background: linear-gradient(246.69deg, #3139FF 5.65%, #FF9558 57.75%, #FFDE32 99.13%);
+    height: 2px;
     @media only screen and (max-width: 858px) {
         margin: 20px 0;
     }
@@ -93,7 +94,7 @@
 }
 
 .rectBox {
-    width: '60%';
+    width: 60%;
     height: 8vh;
     @media only screen and (max-width: 858px) {
         width: 100%;
