@@ -78,7 +78,7 @@
     font-weight: 600;
     font-size: 8vh;
     line-height: 8vh;
-    margin: 1rem 0 0.5rem;
+    margin: 1rem 0 1rem;
     @media (--media-min-small) {
         font-size: var(--font-large-size);
         line-height: var(--font-large-line-height);

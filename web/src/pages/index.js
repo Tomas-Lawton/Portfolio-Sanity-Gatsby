@@ -72,10 +72,10 @@ const IndexPage = (props) => {
 
     <ContainHero>
         <HeroText>
-          Hello! I’m a creative engineer based in Sydney. I design and implement
+          Hey, I'm Tomas! I’m a creative engineer based in Sydney. I design and implement
           solutions to the world&apos;s toughest problems.
         </HeroText>
-        <Hyperlink to="/about" text="About me." />
+        {/* <Hyperlink to="/about" text="About me." /> */}
       </ContainHero>
     <Section>
       <LatestWorks works={data.allSanityPost}/>

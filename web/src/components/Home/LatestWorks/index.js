@@ -1,9 +1,9 @@
 import React from "react";
 import Link from "gatsby-link";
 import { SectionLeft, Left, ToEnd, LatestWorkLink } from "../Styles";
-import {Hyperlink} from "../../Common/Hyperlink"
+import { Hyperlink } from "../../Common/Hyperlink";
 // import { graphql } from "gatsby"
-import { MinimalText } from "../../../styles/GlobalStyles"
+import { MinimalText } from "../../../styles/GlobalStyles";
 import GraphQLErrorList from "../../../components/graphql-error-list";
 import { format, isFuture } from "date-fns";
 
@@ -28,10 +28,7 @@ const testMap = [0, 0, 0, 0, 0];
 // }
 // `;
 
-
-
 function Latest(props) {
-  
   // const { data, errors } = props;
 
   // if (errors) {
@@ -51,19 +48,23 @@ function Latest(props) {
   return (
     <SectionLeft>
       <Left>
-        <h1 style={{fontFamily: "Open Sans"}}>
-          Latest Works
-        </h1>
-
-    {props.works &&
-    props.works.edges.map((item, index) => ( 
-      <Link to={getBlogUrl(item.node.publishedAt, item.node.slug.current)}>
-        <LatestWorkLink key={index}>
-          <h2>{item.node.title}</h2> <h2 style={{textAlign: "right"}}>{format(new Date(item.node.publishedAt), "MM/yyyy")}</h2>
-        </LatestWorkLink>
-      </Link>
-      ))
-        }
+        <h1 style={{ fontFamily: "Open Sans" }}>Latest Works</h1>
+        {props.works &&
+          props.works.edges.map((item, index) => {
+            return (
+              <Link
+                key={index}
+                to={getBlogUrl(item.node.publishedAt, item.node.slug.current)}
+              >
+                <LatestWorkLink key={index}>
+                  <h2>{item.node.title}</h2>
+                  <h2 style={{ textAlign: "right" }}>
+                    {format(new Date(item.node.publishedAt), "MM/yyyy")}
+                  </h2>
+                </LatestWorkLink>
+              </Link>
+            );
+          })}
       </Left>
       <ToEnd>
         <hr />
@@ -72,8 +73,7 @@ function Latest(props) {
           Content is generated using Contentful and the app is deployed
           automatically using Netlify.{" "}
         </MinimalText>
-        <Hyperlink to="/work" text="View All."/>
-
+        <Hyperlink to="/work" text="View All." />
       </ToEnd>
     </SectionLeft>
   );
