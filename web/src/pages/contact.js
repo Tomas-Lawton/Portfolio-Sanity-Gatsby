@@ -3,7 +3,6 @@ import "../styles/GlobalDOMStyle.css"
 import Layout from "../components/Layout"
 import SEO from "../components/seo"
 import Submit from "../components/Common/Submit"
-
 import { ContactCard, ContactField, MyForm, Textarea, Message, Contact } from "../styles/GlobalStyles"
 const About = () => (
   <Layout>
@@ -28,7 +27,7 @@ const About = () => (
         </MyForm>
 
         <div style={{ width: '100%', display: 'flex'}}>
-          <Submit type="submit" text="Send"/>
+          <Submit text="Send"/>
         </div>
       </ContactCard>
       </div>
