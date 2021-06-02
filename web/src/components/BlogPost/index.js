@@ -10,20 +10,6 @@ import { BigNumber, Fixer } from "./Style";
 import { window } from "browser-monads";
 
 function BlogPostPreview(props) {
-  useEffect(() => {
-    window.addEventListener("mouseenter", () => {
-      console.log("hovered");
-    });
-    window.addEventListener("mouseleave", () => {
-      console.log("leave");
-    });
-
-    // return (
-    //   window.removeEventListener('mouseenter', () => {
-    //     console.log('hovered');
-    //   })
-    // )
-  }, []);
   return (
     <Link to={getBlogUrl(props.publishedAt, props.slug.current)}>
       <div className={styles.containBlogPreview}>
