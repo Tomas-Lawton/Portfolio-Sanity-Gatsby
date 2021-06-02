@@ -75,7 +75,7 @@ const IndexPage = (props) => {
           Hey, I'm Tomas! I’m a creative engineer based in Sydney. I design and implement
           solutions to the world&apos;s toughest problems.
         </HeroText>
-        {/* <Hyperlink to="/about" text="About me." /> */}
+        <Hyperlink to="/contact" text="Lets talk." />
       </ContainHero>
     <Section>
       <LatestWorks works={data.allSanityPost}/>

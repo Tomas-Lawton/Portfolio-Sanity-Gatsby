@@ -1,34 +1,15 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import Link from "gatsby-link";
 import { SectionLeft, Left, ToEnd, LatestWorkLink } from "../Styles";
 import { Hyperlink } from "../../Common/Hyperlink";
 // import { graphql } from "gatsby"
 import { MinimalText } from "../../../styles/GlobalStyles";
 import GraphQLErrorList from "../../../components/graphql-error-list";
-import { format, isFuture } from "date-fns";
-
-import { getBlogUrl } from "../../../lib/helpers";
+import Item from "./Item"
 const testMap = [0, 0, 0, 0, 0];
 
-// export const query = graphql`
-// query {
-//   allSanityPost(limit: 5) {
-//     edges {
-//       node {
-//         title
-//         publishedAt
-//         excerpt {
-//           children {
-//             text
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
-// `;
-
 function Latest(props) {
+  const [blurb, setBlurb] = useState('')
   // const { data, errors } = props;
 
   // if (errors) {
@@ -43,36 +24,26 @@ function Latest(props) {
   //   );
   // }
 
-  console.log("GOT: ", props);
+  useEffect(() => {
+    setBlurb(props.works.edges[0].node.excerpt[0].children[0].text)
+  }, [])
 
   return (
     <SectionLeft>
       <Left>
         <h1 style={{ fontFamily: "Open Sans" }}>Latest Works</h1>
         {props.works &&
-          props.works.edges.map((item, index) => {
-            return (
-              <Link
-                key={index}
-                to={getBlogUrl(item.node.publishedAt, item.node.slug.current)}
-              >
-                <LatestWorkLink key={index}>
-                  <h2>{item.node.title}</h2>
-                  <h2 style={{ textAlign: "right" }}>
-                    {format(new Date(item.node.publishedAt), "MM/yyyy")}
-                  </h2>
-                </LatestWorkLink>
-              </Link>
-            );
-          })}
+          props.works.edges.map((item, index) => (
+              <Item key={"Latest-Work-", index} data={[item, index, setBlurb]}/>
+            )
+          )}
       </Left>
       <ToEnd>
         <hr />
-        <MinimalText>
-          This app uses a JAM-stack architecture with Typescript and Gatsby.
-          Content is generated using Contentful and the app is deployed
-          automatically using Netlify.{" "}
+        {blurb && <MinimalText>
+          {blurb}
         </MinimalText>
+}
         <Hyperlink to="/work" text="View All." />
       </ToEnd>
     </SectionLeft>
