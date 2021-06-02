@@ -1,7 +1,7 @@
-import React from "react"
-import styled from "styled-components"
-import { format, distanceInWords, differenceInDays } from "date-fns"
-import { buildImageObj, imageUrlFor } from "../../lib"
+import React from "react";
+import styled from "styled-components";
+import { format, distanceInWords, differenceInDays } from "date-fns";
+import { buildImageObj, imageUrlFor } from "../../lib";
 
 const BlogPostStyles = styled.article`
   .mainImage {
@@ -47,13 +47,12 @@ const BlogPostStyles = styled.article`
     margin: 2rem 0 3rem;
     opacity: 0.8;
   }
-`
+`;
 
 function Post(props) {
-  const { _rawBody, title, mainImage, publishedAt } = props
+  const { _rawBody, title, mainImage, publishedAt } = props;
   return (
     <BlogPostStyles>
-      {" "}
       {mainImage && mainImage.asset && (
         <div className="mainImage">
           <img
@@ -64,28 +63,27 @@ function Post(props) {
               .auto("format")
               .url()}
             alt={mainImage.alt}
-          />{" "}
+          />
         </div>
-      )}{" "}
+      )}
       <div>
         <div>
           <div className="mainContent">
-            <h1 className="title"> {title} </h1>{" "}
+            <h1 className="title"> {title} </h1>
             {publishedAt && (
               <div className="publishedAt">
-                {" "}
                 {differenceInDays(new Date(publishedAt), new Date()) > 3
                   ? distanceInWords(new Date(publishedAt), new Date())
-                  : format(new Date(publishedAt), "MMMM Do, YYYY")}{" "}
+                  : format(new Date(publishedAt), "MMMM Do, YYYY")}
               </div>
-            )}{" "}
+            )}
             {/* <PortableText blocks={_rawBody} /> */}
-            {_rawBody && <p>{_rawBody} </p>}
-          </div>{" "}
-        </div>{" "}
-      </div>{" "}
+            {_rawBody && <p> {_rawBody} </p>}
+          </div>
+        </div>
+      </div>
     </BlogPostStyles>
-  )
+  );
 }
 
-export default Post
+export default Post;
