@@ -1,24 +1,14 @@
 import React from "react";
 import "../styles/GlobalDOMStyle.css";
-
 import Layout from "../components/Layout";
-// import Image from "../components/image"
 import SEO from "../components/seo";
-import {
-  ContainHero,
-  HeroText,
-  ContainItems,
-  FullContainer,
-} from "../styles/GlobalStyles";
-// import Blog from "../templates/blog"
-// import Post from "../components/Post"
 import { graphql } from "gatsby";
 import {
   filterOutDocsPublishedInTheFuture,
   filterOutDocsWithoutSlugs,
   mapEdgesToNodes,
 } from "../lib/helpers";
-import Container from "../Components/Container";
+import Container from "../components/Container";
 import GraphQLErrorList from "../components/graphql-error-list";
 import BlogPostPreviewGrid from "../components/BlogPreview/blog-post-preview-grid";
 
@@ -87,7 +77,6 @@ const Work = (props) => {
       </Layout>
     );
   }
-
   const site = (data || {}).site;
   const postNodes = (data || {}).posts
     ? mapEdgesToNodes(data.posts)

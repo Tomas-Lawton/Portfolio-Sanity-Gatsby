@@ -1,15 +1,15 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { graphql } from "gatsby";
 import GraphQLErrorList from "../components/graphql-error-list";
 import SEO from "../components/seo";
 import Layout from "../components/Layout";
-import "../styles/GlobalDOMStyle.css"
-import LatestWorks from "../components/Home/LatestWorks"
-import Pong from "../components/Home/Pong"
-import { ContainHero, HeroText } from "../styles/GlobalStyles"
-import { Section } from "../styles/GlobalStyles"
-import { Hyperlink } from "../components/Common/Hyperlink"
-import { window } from "browser-monads"
+import "../styles/GlobalDOMStyle.css";
+import LatestWorks from "../components/Home/LatestWorks";
+import Pong from "../components/Home/Pong";
+import { ContainHero, HeroText } from "../styles/GlobalStyles";
+import { Section } from "../styles/GlobalStyles";
+import { Hyperlink } from "../components/Common/Hyperlink";
+import { window } from "browser-monads";
 
 export const query = graphql`
   query IndexPageQuery {
@@ -18,29 +18,27 @@ export const query = graphql`
       description
       keywords
     }
-        allSanityPost(limit: 5) {
-            edges {
-              node {
-                title
-                publishedAt
-                excerpt {
-                  children {
-                    text
-                  }
-                }
-                slug {
-                  current
-                }
-              }
+    allSanityPost(limit: 5) {
+      edges {
+        node {
+          title
+          publishedAt
+          excerpt {
+            children {
+              text
             }
           }
+          slug {
+            current
+          }
         }
-
-    
+      }
+    }
+  }
 `;
 
 const IndexPage = (props) => {
-  const [isFull, setFull] = useState(false)
+  const [isFull, setFull] = useState(false);
   const { data, errors } = props;
 
   if (errors) {
@@ -59,37 +57,32 @@ const IndexPage = (props) => {
 
   const switchPongSize = () => {
     setFull(!isFull);
-  }
-  
-    return (
+  };
+
+  return (
     <Layout>
       <SEO
         title={site.title}
         description={site.description}
         keywords={site.keywords}
       />
-
-    <ContainHero>
-        <HeroText>
-          Hey, I'm Tomas! I’m a creative engineer based in Sydney. I design and implement
-          solutions to the world&apos;s toughest problems.
+      <ContainHero>
+        <HeroText size="4vh">
+          Hey, I'm Tomas! I'm a creative engineer combining a lateral approach
+          with exceptional technical ability to design, build and test novel
+          solutions to wicked and socio-technical problems.
         </HeroText>
         <Hyperlink to="/contact" text="Lets talk." />
       </ContainHero>
-      
-      {window.innerWidth > 858 ? 
+      {window.innerWidth > 858 ? (
         <Section>
-          <LatestWorks works={data.allSanityPost}/>
-          <Pong setPongSize={switchPongSize}/>
+          <LatestWorks works={data.allSanityPost} />
+          <Pong setPongSize={switchPongSize} />
         </Section>
-        :
-        <>
-          <LatestWorks expand={true} works={data.allSanityPost}/>
-          <Pong expand={true} setPongSize={switchPongSize}/>
-        </>
-      }
-      
-      </Layout>
+      ) : (
+        <LatestWorks expand={true} works={data.allSanityPost} />
+      )}
+    </Layout>
   );
 };
 
