@@ -1,24 +1,18 @@
-import React from "react"
-import "../styles/GlobalDOMStyle.css"
-
-import Layout from "../components/Layout"
-// import Image from "../components/image"
-import SEO from "../components/seo"
-import { ContainHero, HeroText, ContainItems, FullContainer } from "../styles/GlobalStyles"
-// import Blog from "../templates/blog"
-// import Post from "../components/Post"
+import React from "react";
+import "../styles/GlobalDOMStyle.css";
+import Layout from "../components/Layout";
+import SEO from "../components/seo";
 import { graphql } from "gatsby";
 import {
-  filterOutDocsPublishedInTheFuture,
-  filterOutDocsWithoutSlugs,
-  mapEdgesToNodes,
+    filterOutDocsPublishedInTheFuture,
+    filterOutDocsWithoutSlugs,
+    mapEdgesToNodes,
 } from "../lib/helpers";
 import Container from "../components/container";
 import GraphQLErrorList from "../components/graphql-error-list";
 import BlogPostPreviewGrid from "../components/BlogPreview/blog-post-preview-grid";
 
-
-export const query = graphql`
+export const query = graphql `
   fragment SanityImage on SanityMainImage {
     crop {
       _key
@@ -73,47 +67,52 @@ export const query = graphql`
   }
 `;
 
-const Work = props => {
-  const { data, errors } = props;
+const Work = (props) => {
+    const { data, errors } = props;
 
-  if (errors) {
-    return (
-      <Layout>
-        <GraphQLErrorList errors={errors} />
-      </Layout>
-    );
-  }
+    if (errors) {
+        return ( <
+            Layout >
+            <
+            GraphQLErrorList errors = { errors }
+            />{" "} <
+            /Layout>
+        );
+    }
 
-  const site = (data || {}).site;
-  const postNodes = (data || {}).posts
-    ? mapEdgesToNodes(data.posts)
+    const site = (data || {}).site;
+    const postNodes = (data || {}).posts ?
+        mapEdgesToNodes(data.posts)
         .filter(filterOutDocsWithoutSlugs)
-        .filter(filterOutDocsPublishedInTheFuture)
-    : [];
+        .filter(filterOutDocsPublishedInTheFuture) :
+        [];
 
-  if (!site) {
-    throw new Error(
-      'Missing "Site settings". Open the studio at http://localhost:3333 and add some content to "Site settings" and restart the development server.'
+    if (!site) {
+        throw new Error(
+            'Missing "Site settings". Open the studio at http://localhost:3333 and add some content to "Site settings" and restart the development server.'
+        );
+    }
+
+    return ( <
+        Layout >
+        <
+        SEO title = "Home" / >
+        <
+        div style = {
+            { width: "100%", height: "100%" } } >
+        <
+        Container > { " " } { /* <h1 hidden>Welcome to {site.title}</h1> */ } { " " } {
+            postNodes && ( <
+                BlogPostPreviewGrid title = "Latest blog posts"
+                nodes = { postNodes }
+                // browseMoreHref="/archive/"
+                />
+            )
+        } { " " } <
+        /Container>{" "} <
+        /div>{" "} <
+        /Layout>
     );
-  }
+};
 
-  return (
-  <Layout>
-    <SEO title="Home" />
-
-    <div style={{ width: "100%", height: "100%" }}>
-    <Container>
-        {/* <h1 hidden>Welcome to {site.title}</h1> */}
-        {postNodes && (
-          <BlogPostPreviewGrid
-            title="Latest blog posts"
-            nodes={postNodes}
-            // browseMoreHref="/archive/"
-          />
-        )}
-      </Container>
-    </div>
-  </Layout>
-)};
-
-export default Work
+export default Work;
