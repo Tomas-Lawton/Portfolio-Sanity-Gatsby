@@ -1,33 +1,30 @@
-import React, {useRef, useEffect} from "react";
+import React, { useRef, useEffect } from "react";
 import { FullSizeCanvas } from "./Style"
-
+import { window } from "browser-monads"
 // PONG BASED OFF THIS TUTORIAL
 // https://www.youtube.com/watch?v=ju09womACpQ
 // Changed for react, webpage and AI easing
-
-class Vec
-{
-     constructor(x=0, y=0){
-         this.x = x;
-         this.y = y;
-     }
-     get len() {
-         return Math.sqrt(this.x * this.x + this.y * this.y);
-     }
-     set len(value) {
-         const factor = value / this.len;
-         this.x *= factor ;
-         this.y *= factor;
-     }
+class Vec {
+    constructor(x = 0, y = 0) {
+        this.x = x;
+        this.y = y;
+    }
+    get len() {
+        return Math.sqrt(this.x * this.x + this.y * this.y);
+    }
+    set len(value) {
+        const factor = value / this.len;
+        this.x *= factor;
+        this.y *= factor;
+    }
 }
 
 class Rec {
-    constructor(w, h)
-    {
+    constructor(w, h) {
         this.pos = new Vec();
         this.size = new Vec(w, h);
     }
-    
+
     left() {
         return this.pos.x - this.size.x / 2; // if change to circle use radius
     }
@@ -49,17 +46,15 @@ class Ball extends Rec {
     }
 }
 
-class Player extends Rec
-{
-    constructor(){
+class Player extends Rec {
+    constructor() {
         super(100, 200);
         this.score = 0;
     }
 }
 
 class Pong {
-    constructor(canvas, updateScore)
-    {
+    constructor(canvas, updateScore) {
         this._canvas = canvas;
         this._context = canvas.getContext('2d')
 
@@ -73,7 +68,7 @@ class Pong {
         this.setupPadels();
         let lastTime;
         const callBack = (milli) => {
-            if(lastTime) {
+            if (lastTime) {
                 this.update((milli - lastTime) / 1000); //seconds
             }
             lastTime = milli;
@@ -90,19 +85,18 @@ class Pong {
             player.pos.y = this._canvas.height / 2
         })
     }
-    drawRect(rect)
-    {
+    drawRect(rect) {
         this._context.fillStyle = "#fff";
-        this._context.fillRect(rect.left(), rect.top(), 
-                               rect.size.x, rect.size.y);
+        this._context.fillRect(rect.left(), rect.top(),
+            rect.size.x, rect.size.y);
     }
-    randomizer() { 
+    randomizer() {
         const val = 1500 * (Math.random() - .5);
-        return (val > 1900 || val < 1100) ? val : 0; 
+        return (val > 1900 || val < 1100) ? val : 0;
     };
     collide(player, ball) {
-        if (player.left() < ball.right() && player.right() > ball.left() 
-        && player.top() < ball.bottom() && player.bottom() > ball.top()) {
+        if (player.left() < ball.right() && player.right() > ball.left() &&
+            player.top() < ball.bottom() && player.bottom() > ball.top()) {
             const len = ball.vel.len;
             ball.vel.x = -(ball.vel.x);
             ball.vel.y += this.randomizer(); // change y angle
@@ -114,15 +108,15 @@ class Pong {
         this._canvas.height = newHeight;
         this.setupPadels();
     }
-    draw(){
-            // update background
-            this._context.fillStyle = ' #151515';
-            this._context.fillRect(0, 0, 
-                                   this._canvas.width, this._canvas.height);
-            // ball
-            this.drawRect(this.ball);
-            // padels
-            this.players.forEach(player => this.drawRect(player));
+    draw() {
+        // update background
+        this._context.fillStyle = ' #151515';
+        this._context.fillRect(0, 0,
+            this._canvas.width, this._canvas.height);
+        // ball
+        this.drawRect(this.ball);
+        // padels
+        this.players.forEach(player => this.drawRect(player));
     }
     reset() {
         this.ball.pos.x = this._canvas.width / 2;
@@ -143,7 +137,7 @@ class Pong {
         // score point
         if (this.ball.left() < 0 || this.ball.right() > this._canvas.width) {
             const playerId = this.ball.vel.x < 0 | 0; // determine player point by ball direction
-            this.players[playerId].score ++;
+            this.players[playerId].score++;
             this.reset();
             this.ball.vel.x = -(this.ball.vel.x);
             this.updateScoreUI(this.players);
@@ -167,7 +161,7 @@ class Pong {
     }
     checkHeight(position, inputCanvas) {
         if (position > inputCanvas.height - 100) { //half padel height
-            position = inputCanvas.height - 100; 
+            position = inputCanvas.height - 100;
         } else if (position < 100) {
             position = 100;
         }
@@ -181,7 +175,7 @@ class Pong {
 
 const Canvas = ({ updateScore }) => {
     const canvasReference = useRef()
-    
+
     useEffect(() => {
         const getCanvas = canvasReference.current;
         // init correct pixels for canvas paint
@@ -213,13 +207,12 @@ const Canvas = ({ updateScore }) => {
                 pong.start();
             });
         }
-   }, []);
+    }, []);
 
-    return (
-        <>
-         {/* <p>oiweoi</p> */}
-         <FullSizeCanvas ref={canvasReference} ></FullSizeCanvas>
-         </>
+    return ( <
+        > { /* <p>oiweoi</p> */ } <
+        FullSizeCanvas ref = { canvasReference } > < /FullSizeCanvas> <
+        />
     );
 }
 

@@ -4,13 +4,12 @@ import GraphQLErrorList from "../components/graphql-error-list";
 import SEO from "../components/seo";
 import Layout from "../components/Layout";
 import "../styles/GlobalDOMStyle.css"
-import { Link } from "gatsby"
 import LatestWorks from "../components/Home/LatestWorks"
 import Pong from "../components/Home/Pong"
 import { ContainHero, HeroText } from "../styles/GlobalStyles"
 import { Section } from "../styles/GlobalStyles"
 import { Hyperlink } from "../components/Common/Hyperlink"
-import is from "date-fns/esm/locale/is/index.js";
+import { window } from "browser-monads"
 
 export const query = graphql`
   query IndexPageQuery {
