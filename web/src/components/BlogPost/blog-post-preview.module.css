@@ -86,6 +86,7 @@
     font-weight: normal;
     font-size: 3vh;
     color: #FFFFFF;
+    padding-bottom: 30px;
 }
 
 .rectBox {
@@ -100,7 +101,7 @@
     /* color: linear-gradient(246.69deg, #3139FF 5.65%, #FF9558 57.75%, #FFDE32 99.13%); */
     text-transform: uppercase;
     font-weight: 600;
-    font-size: 6vw;
+    font-size: 5vw;
     line-height: 6vw;
     margin: 1rem 0 1rem;
     @media (--media-min-small) {

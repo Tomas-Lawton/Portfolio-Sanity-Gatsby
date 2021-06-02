@@ -9,7 +9,7 @@ export const navigationLinks = [
     { route: '/qrcode', name: "QR" }
 ]
 
-const NavLinks = () => { 
+const NavLinks = ({ isLarge }) => { 
     const [route, setRoute] = useState(null)
     useEffect(() => {
         // update on window change
@@ -23,7 +23,7 @@ const NavLinks = () => {
             <NavLinkItem key={index}>
                 <Link to={NavItem.route} children={NavItem.name}/>
                 {route === NavItem.route && 
-                <AnimateArrow src={LinkArrow}/> 
+                <AnimateArrow isLarge={isLarge} src={LinkArrow}/> 
                 }
             </NavLinkItem>
         )

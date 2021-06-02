@@ -1,6 +1,6 @@
 import styled from "styled-components"
 export const NewArrow = styled.img ` 
-height: 2vw;
+height: 4vh;
 width: auto;
 `
 

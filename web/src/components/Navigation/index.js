@@ -8,7 +8,7 @@ import NavLinks from "./NavLinks";
 const Navigation = () => (
   <NavContainer>
     <HomeLink />
-    <NavLinks />
+    <NavLinks/>
     <CallToAction>
       <BigLink to="/contact" text="Hire Me"></BigLink>
       <Link

@@ -16,7 +16,7 @@ export const LinkStyle = styled(Link)
     text-align: center;
     text-decoration: none;
     line-height: 3vh;
-
+    
         &:hover {
             background-image: linear-gradient(246.69deg, #C6C8FF 5.65%, #F99860 79.65%);
             background-size: 100%;

@@ -77,12 +77,19 @@ const IndexPage = (props) => {
         </HeroText>
         <Hyperlink to="/contact" text="Lets talk." />
       </ContainHero>
-    <Section>
-      <LatestWorks works={data.allSanityPost}/>
-      <Pong setPongSize={switchPongSize}/>
-    </Section>
-  
-
+      
+      {window.innerWidth > 858 ? 
+        <Section>
+          <LatestWorks works={data.allSanityPost}/>
+          <Pong setPongSize={switchPongSize}/>
+        </Section>
+        :
+        <>
+          <LatestWorks expand={true} works={data.allSanityPost}/>
+          <Pong expand={true} setPongSize={switchPongSize}/>
+        </>
+      }
+      
       </Layout>
   );
 };

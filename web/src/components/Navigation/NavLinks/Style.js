@@ -8,6 +8,7 @@ justify-content: space-between;
 // margin: 4vh;
 font-size: 3vh;
 font-weight: 400;
+font-family: Open Sans;
 `;
 
 export const NavLinkItem = styled.div `
@@ -16,7 +17,6 @@ justify-content: space-between;
 height: 5vh;
 align-items: center;
 margin-bottom: 0;
-
 &:hover {
     opacity: .5;
 }
@@ -34,7 +34,7 @@ animation-name: slidein;
         opacity: 100;
     }
   }
-
-  width: 2vw; 
+  width: ${props => props.isLarge ? '7vw': '3vw'}; 
+  margin-right: ${props => props.isLarge && '11.5px'}; 
   height: auto;
   `

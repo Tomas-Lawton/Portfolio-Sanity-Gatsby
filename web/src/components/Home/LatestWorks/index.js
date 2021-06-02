@@ -29,7 +29,7 @@ function Latest(props) {
   }, [])
 
   return (
-    <SectionLeft>
+    <SectionLeft expand={props.expand}>
       <Left>
         <h1 style={{ fontFamily: "Open Sans" }}>Latest Works</h1>
         {props.works &&
@@ -39,7 +39,6 @@ function Latest(props) {
           )}
       </Left>
       <ToEnd>
-        {/* <hr /> */}
         {blurb && <MinimalText>{blurb}</MinimalText>}
         <Hyperlink to="/work" text="View All." />
       </ToEnd>

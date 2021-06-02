@@ -3,13 +3,13 @@ import styled from "styled-components"
 
 export const SectionLeft = styled.div `
     background-color: #151515;
-    width: 50%;
     display: flex;
     flex-direction: column;
-    margin-right: 1vh;
-    overflow: hidden;
     justify-content: space-between;
-    
+    width: ${props => props.expand ? '100%' : '50%'};
+    margin-right: ${props => props.expand ? '0' : '1vh'};
+    margin-bottom: ${props => props.expand ? '1vh' : '0'};
+    overflow: ${props => props.expand ? 'overflow' : 'hidden'};
 }`
 
 export const Left = styled.div `
@@ -43,6 +43,12 @@ margin: 0;
 display: flex;
 flex-direction: column;
 justify-content: space-between;
+
+min-height: ${props => props.expand ? '500px' : 'calc(100% - 10px)'};
+width: ${props => props.expand ? '100%' : '50%'};
+margin-right: ${props => props.expand ? '0' : '1vh'};
+margin-bottom: ${props => props.expand ? '1vh' : '0'};
+overflow: ${props => props.expand ? 'overflow' : 'hidden'};
 `;
 
 export const RightContent = styled.div `
@@ -52,6 +58,7 @@ export const RightContent = styled.div `
 height: calc(100% - 10px);
 // height: 100%;
 // margin-bottom: 3vh;
+
 `;
 
 export const LatestWorkLink = styled.div `
@@ -59,6 +66,7 @@ display: flex;
 justify-content: space-between;
 
 h2 {
+    
     font-size: 2vh;
     font-weight: 400;
 }

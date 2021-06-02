@@ -3,7 +3,7 @@ import { SectionRight, RightContent } from "../Styles";
 import Canvas from "./Canvas"
 import { MinimalText } from "../../../styles/GlobalStyles"
 
-function Pong({ setPongSize, isFull }) {
+function Pong({ setPongSize, isFull, expand }) {
     const [ player1, setPlayer1 ] = useState(0);
     const [ player2, setPlayer2 ] = useState(0);
 
@@ -14,8 +14,8 @@ function Pong({ setPongSize, isFull }) {
 
     return (
     // <SectionRight isFull onClick={setPongSize}> 
-    <SectionRight> 
-         <RightContent>
+    <SectionRight expand={expand}> 
+         <RightContent expand={expand}>
              <Canvas updateScore={updateScore} />
          </RightContent>
          <div style={{position: 'relative', height: '5px', display: "flex", justifyContent:"space-between"}}>    

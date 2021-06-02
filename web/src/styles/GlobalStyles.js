@@ -153,6 +153,13 @@ border-color: #ffffff;
   outline: none;
   background: #1C1C1C;
 }
+
+&:active {
+  outline: none;
+  background: #1C1C1C;
+}
+
+
 `;
 
 export const Textarea = styled.textarea `

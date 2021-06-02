@@ -15,7 +15,7 @@ import HomeLink from "../HomeLink";
 import Link from "gatsby-link";
 import { navigationLinks } from "../Navigation/NavLinks";
 import { Sling as Hamburger } from "hamburger-react";
-
+import NavLinks from "../Navigation/NavLinks"
 const query = graphql`
   query SiteTitleQuery {
     site: sanitySiteSettings(_id: { regex: "/(drafts.|)siteSettings/" }) {
@@ -62,32 +62,24 @@ const Layout = ({ children }) => {
     <FillGradient>
       <GlobalStyles>
         <PageContent>
-          <>
             {!showNav && (
               <SmallNav>
                 <TopBar>
                   <HomeLink isSmall/>
                   <a onClick={handleBurger}>
-                    <Hamburger />
+                    <Hamburger style={{padding: 0}}/>
                   </a>
                 </TopBar>
                 {isBurged && (
-                  <BottomBar>
-                    <ul style={{ margin: 0, marginTop: "2vh", padding: 0 }}>
-                      {navigationLinks.map((NavItem, index) => (
-                        <StyledNavLink key={index}>
-                          <Link to={NavItem.route}>{NavItem.name}</Link>
-                        </StyledNavLink>
-                      ))}
-                    </ul>
+                  <BottomBar style={{ margin: 0, marginTop: "2vh", padding: 0 }}>
+                    <NavLinks isLarge={true} />
                   </BottomBar>
                 )}
               </SmallNav>
             )}
             {children}
-          </>
         </PageContent>
-        {showNav && <Navigation />}
+        {showNav && <Navigation/>}
       </GlobalStyles>
     </FillGradient>
   );

@@ -2,10 +2,9 @@ import React from "react";
 import {ContainLink } from "./Style"
 import {BigLink} from "../Common/Hyperlink"
 
-const HomeLink = (props) => {
-  const { isSmall } = props;
+const HomeLink = ({ isSmall }) => {
   return (
-    <ContainLink isSmall={isSmall | false}>
+    <ContainLink isSmall={isSmall}>
       <BigLink to="/" text="Tomas Lawton"/>
     </ContainLink>
   );
