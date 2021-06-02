@@ -93,6 +93,7 @@ export const MinimalText = styled.p `
   font-size: 1.3vh;
   line-height: 1.8vh;
   font-weight: 400;
+  height: 3.5vh;
   margin: ${props => props.setMargin && props.setMargin};
   // width: ${props => (props.width ? props.width : "100%")}
 `

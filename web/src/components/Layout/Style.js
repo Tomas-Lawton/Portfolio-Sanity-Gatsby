@@ -49,6 +49,9 @@ export const PageContent = styled.div `
   width: 100%;
   height: 100%;
   overflow: auto;
+  @media only screen and (max-width: 858px) {
+    margin-right: 0;
+}
 `;
 
 export const SmallNav = styled.div `

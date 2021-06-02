@@ -36,9 +36,11 @@ function BlogPostPreview(props) {
                     <PortableText blocks={props._rawExcerpt} />
                   </div>
                 )}
-                <div className={styles.date}>
-                  {format(new Date(props.publishedAt), "MMMM Mo, yyyy")}
-                </div>
+                {window.innerWidth > 858 && 
+                  <div className={styles.date}>
+                    {format(new Date(props.publishedAt), "MMMM Mo, yyyy")}
+                  </div>
+                }
               </div>
             </div>
             <div className={styles.right}>
@@ -54,12 +56,19 @@ function BlogPostPreview(props) {
                   />
                 )}
               </div>
+              {window.innerWidth < 858 && 
+                <div className={styles.date}>
+                  {format(new Date(props.publishedAt), "MMMM Mo, yyyy")}
+                </div>
+}
             </div>
           </div>
         </div>
         <div className={styles.toEnd}>
-          <ArrowLink to={getBlogUrl(props.publishedAt, props.slug.current)} />
-          <div style={{ width: '60%', height: "8vh" }}>
+          {window.innerWidth > 858 &&  
+            <ArrowLink to={getBlogUrl(props.publishedAt, props.slug.current)} />
+          }
+          <div className={styles.rectBox}>
             <Fixer>
               <BigNumber>0{props.index+1}</BigNumber>
             </Fixer>
@@ -69,8 +78,11 @@ function BlogPostPreview(props) {
                 <p style={{ marginLeft: "4vw", marginBottom: "0" }}>{cat.title}</p>
               ))}
             </div>
-          </div>
+            </div>
         </div>
+        {window.innerWidth < 858 && 
+          <ArrowLink to={getBlogUrl(props.publishedAt, props.slug.current)} />
+        }
       </div>
       </Link>
   );

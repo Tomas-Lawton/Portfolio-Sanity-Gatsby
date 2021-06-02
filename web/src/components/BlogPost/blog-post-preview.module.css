@@ -29,10 +29,16 @@
     width: 46%;
     margin: 0;
     padding: 0;
+    @media only screen and (max-width: 858px) {
+        width: 100%;
+    }
 }
 
 .right {
     width: 45%;
+    @media only screen and (max-width: 858px) {
+        width: 100%;
+    }
 }
 
 .flex {
@@ -41,6 +47,10 @@
     justify-content: space-between;
     width: 100%;
     /* padding: 5vw 5vw 0 5vw; */
+    @media only screen and (max-width: 858px) {
+        width: 100%;
+        display: block;
+    }
 }
 
 .toEnd {
@@ -48,6 +58,9 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
+    @media only screen and (max-width: 858px) {
+        margin: 20px 0;
+    }
 }
 
 .containBlogPreview {
@@ -62,6 +75,9 @@
 
 .rainbowBar {
     background: linear-gradient(246.69deg, #3139FF 5.65%, #FF9558 57.75%, #FFDE32 99.13%);
+    @media only screen and (max-width: 858px) {
+        margin: 20px 0;
+    }
 }
 
 .text {
@@ -72,12 +88,20 @@
     color: #FFFFFF;
 }
 
+.rectBox {
+    width: '60%';
+    height: 8vh;
+    @media only screen and (max-width: 858px) {
+        width: 100%;
+    }
+}
+
 .title {
     /* color: linear-gradient(246.69deg, #3139FF 5.65%, #FF9558 57.75%, #FFDE32 99.13%); */
     text-transform: uppercase;
     font-weight: 600;
-    font-size: 8vh;
-    line-height: 8vh;
+    font-size: 6vw;
+    line-height: 6vw;
     margin: 1rem 0 1rem;
     @media (--media-min-small) {
         font-size: var(--font-large-size);
@@ -116,4 +140,7 @@
     font-size: var(--font-small-size);
     line-height: var(--font-small-line-height);
     color: white;
+    @media only screen and (max-width: 858px) {
+        margin: 20px 0;
+    }
 }

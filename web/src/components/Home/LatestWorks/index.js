@@ -39,11 +39,8 @@ function Latest(props) {
           )}
       </Left>
       <ToEnd>
-        <hr />
-        {blurb && <MinimalText>
-          {blurb}
-        </MinimalText>
-}
+        {/* <hr /> */}
+        {blurb && <MinimalText>{blurb}</MinimalText>}
         <Hyperlink to="/work" text="View All." />
       </ToEnd>
     </SectionLeft>

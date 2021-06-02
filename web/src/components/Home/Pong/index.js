@@ -19,8 +19,8 @@ function Pong({ setPongSize, isFull }) {
              <Canvas updateScore={updateScore} />
          </RightContent>
          <div style={{position: 'relative', height: '5px', display: "flex", justifyContent:"space-between"}}>    
-        <MinimalText setMargin="0" width="30px">{player1}</MinimalText>
-         <MinimalText setMargin="0"  width="30px">{player2}</MinimalText>
+            <MinimalText setMargin="0" width="30px">{player1}</MinimalText>
+            <MinimalText setMargin="0"  width="30px">{player2}</MinimalText>
          </div> 
       </SectionRight>
     );

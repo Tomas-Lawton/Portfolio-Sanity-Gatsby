@@ -33,6 +33,8 @@ const Layout = ({ children }) => {
     } else {
       setShowNav(true);
     }
+    //ensure responsive change is correct
+    window.location.reload(false); 
   };
 
   useEffect(() => {
