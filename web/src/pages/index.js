@@ -55,9 +55,9 @@ const IndexPage = (props) => {
     );
   }
 
-  const switchPongSize = () => {
-    setFull(!isFull);
-  };
+  // const switchPongSize = () => {
+  //   setFull(!isFull);
+  // };
 
   return (
     <Layout>
@@ -74,13 +74,18 @@ const IndexPage = (props) => {
         </HeroText>
         <Hyperlink to="/contact" text="Lets talk." />
       </ContainHero>
-      {window.innerWidth > 858 ? (
-        <Section>
-          <LatestWorks works={data.allSanityPost} />
-          <Pong setPongSize={switchPongSize} />
-        </Section>
-      ) : (
-        <LatestWorks expand={true} works={data.allSanityPost} />
+      {site && (
+        <>
+          {window.innerWidth > 858 ? (
+            <Section>
+              <LatestWorks expand={false} works={data.allSanityPost} />
+              <Pong />
+              {/* setPongSize={switchPongSize} */}
+            </Section>
+          ) : (
+            <LatestWorks expand={true} works={data.allSanityPost} />
+          )}
+        </>
       )}
     </Layout>
   );

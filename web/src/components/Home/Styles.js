@@ -29,20 +29,17 @@ export const ToEnd = styled.div `
     padding: 0;
   }
 `;
-
-export const SectionRight = styled.a `
+// display: inline-block;
+// height: ${(props) => (props.isFull ? "100%" : "50%")};
+// width: ${(props) => (props.isFull ? "100%" : "50%")};
+export const SectionRight = styled.div `
   background-color: #151515;
   width: 50%;
-  // display: inline-block;
-  // height: ${(props) => (props.isFull ? "100%" : "50%")};
-  // width: ${(props) => (props.isFull ? "100%" : "50%")};
   padding: 5vh 5vw;
-
   margin: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
   min-height: ${(props) => (props.expand ? "500px" : "calc(100% - 10px)")};
   width: ${(props) => (props.expand ? "100%" : "50%")};
   margin-right: ${(props) => (props.expand ? "1vh" : "0")};

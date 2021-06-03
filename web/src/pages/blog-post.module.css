@@ -3,6 +3,9 @@
 .root {
     background: #151515;
     padding: 5vw 10vh 10vw 10vh;
+    @media only screen and (max-width: 858px) {
+        padding: 5vw 1vh 10vw 1vh;
+    }
 }
 
 .title {
