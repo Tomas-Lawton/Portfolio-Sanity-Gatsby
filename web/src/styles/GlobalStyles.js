@@ -87,6 +87,34 @@ export const QRContainer = styled.div `
   align-items: center;
 `;
 
+export const NotFoundContainer = styled.div `
+  width: 100%;
+  height: 100%;
+  background: #151515;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 25vw;
+  // height: auto;
+  text-align: center;
+`;
+
+export const ExpandedLinks = styled.div `
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
+`;
+
+export const QR = styled.img `
+  width: 40vw;
+  height: auto;
+  @media only screen and (max-width: 858px) {
+    width: 100vw;
+    height: auto;
+  }
+`;
+
 export const MinimalText = styled.p `
   font-family: Open Sans;
   // font-weight: 300;

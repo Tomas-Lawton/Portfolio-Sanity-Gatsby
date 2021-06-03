@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Fixer = styled.div`
+export const Fixer = styled.div `
   // position: fixed;
   display: flex;
   justify-content: flex-end;
@@ -8,7 +8,7 @@ export const Fixer = styled.div`
   position: relative;
 `;
 
-export const BigNumber = styled.h1`
+export const BigNumber = styled.h1 `
   font-weight: 400;
   font-family: Merriweather;
   font-size: 16vh;

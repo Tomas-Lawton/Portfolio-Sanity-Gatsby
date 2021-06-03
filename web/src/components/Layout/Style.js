@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const FillGradient = styled.div `
+export const FillGradient = styled.div`
   margin: 0;
   padding: 0;
   // background: linear-gradient(246.69deg, #3139FF 5.65%, #FF9558 57.75%, #FFDE32 99.13%);
@@ -32,7 +32,7 @@ export const FillGradient = styled.div `
   }
 `;
 
-export const GlobalStyles = styled.div `
+export const GlobalStyles = styled.div`
   font-family: "Merriweather", serif;
   margin: 0;
   padding: 15px;
@@ -42,7 +42,7 @@ export const GlobalStyles = styled.div `
   width: 100%;
 `;
 
-export const PageContent = styled.div `
+export const PageContent = styled.div`
   margin-right: 15px;
   display: flex;
   flex-direction: column;
@@ -51,22 +51,22 @@ export const PageContent = styled.div `
   overflow: auto;
   @media only screen and (max-width: 858px) {
     margin-right: 0;
-}
+  }
 `;
 
-export const SmallNav = styled.div `
+export const SmallNav = styled.div`
   //   height: 17vh;
   background: #151515;
   margin-bottom: 1vh;
   padding: 5vh 5vw 4vh;
 `;
 
-export const TopBar = styled.div `
+export const TopBar = styled.div`
   display: flex;
   justify-content: space-between;
 `;
 
-export const BottomBar = styled.div `
+export const BottomBar = styled.div`
   margin: 0;
   padding: 0;
   animation-duration: 1s;
@@ -82,7 +82,7 @@ export const BottomBar = styled.div `
   }
 `;
 
-export const StyledNavLink = styled.li `
+export const StyledNavLink = styled.li`
   font-family: Open Sans;
   text-decoration: none;
   //   font-weight: bold;

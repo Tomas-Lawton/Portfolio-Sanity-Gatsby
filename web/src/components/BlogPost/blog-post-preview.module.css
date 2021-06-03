@@ -23,6 +23,7 @@
         height: 100%;
         object-fit: cover;
     }
+    /* margin-top: 1em; */
 }
 
 .left {
@@ -151,5 +152,21 @@ li {
     color: white;
     @media only screen and (max-width: 858px) {
         margin: 20px 0;
+    }
+}
+
+.cat {
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 4vw;
+    margin-bottom: 0;
+    white-space: nowrap;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    @nest & p {
+        margin: 1vh 0 0 20px;
+        padding: 0;
+        /* display: inline-block; */
     }
 }

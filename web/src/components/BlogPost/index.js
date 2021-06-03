@@ -6,7 +6,7 @@ import React from "react";
 import { format } from "date-fns";
 import { imageUrlFor } from "../../lib/image-url";
 import ArrowLink from "../Common/ArrowLink";
-import { BigNumber, Fixer } from "./Style";
+import { BigNumber, Fixer, Cat } from "./Style";
 import { window } from "browser-monads";
 
 const BlogPostPreview = (props) => (
@@ -57,14 +57,15 @@ const BlogPostPreview = (props) => (
         {window.innerWidth > 858 && (
           <div className={styles.rectBox}>
             <Fixer>
-              <BigNumber>0{props.index + 1}</BigNumber>
+              <BigNumber>
+                {props.index + 1 > 9 ? 1 : 0}
+                {(props.index + 1) % 10}
+              </BigNumber>
             </Fixer>
             <hr className={styles.rainbowBar} />
-            <div style={{ display: "flex", justifyContent: "flex-end" }}>
+            <div className={styles.cat}>
               {props.categories.map((cat, index) => (
-                <p key={index} style={{ marginLeft: "4vw", marginBottom: "0" }}>
-                  {cat.title}
-                </p>
+                <p key={index}>{cat.title}</p>
               ))}
             </div>
           </div>

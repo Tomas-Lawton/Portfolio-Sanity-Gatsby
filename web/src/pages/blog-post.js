@@ -15,6 +15,17 @@ function BlogPost(props) {
         <div className={styles.grid}>
           <div className={styles.mainContent}>
             <h1 className={styles.title}>{title}</h1>
+            <h3>{format(new Date(publishedAt), "MMMM Mo, yyyy")}</h3>
+            {categories && (
+              // <div className={styles.categories}>
+              <div className={styles.flatten}>
+                {categories.map((category) => (
+                  <p key={category._id}>{category.title}</p>
+                ))}
+              </div>
+              // </div>
+            )}
+            <hr />
             {_rawBody && <PortableText blocks={_rawBody} />}
           </div>
           <aside className={styles.metaContent}>
@@ -23,16 +34,6 @@ function BlogPost(props) {
                 {differenceInDays(new Date(publishedAt), new Date()) > 3
                   ? formatDistance(new Date(publishedAt), new Date())
                   : format(new Date(publishedAt), "MMMM Mo, yyyy")}
-              </div>
-            )}
-            {categories && (
-              <div className={styles.categories}>
-                <h3 className={styles.categoriesHeadline}>Categories</h3>
-                <ul>
-                  {categories.map((category) => (
-                    <li key={category._id}>{category.title}</li>
-                  ))}
-                </ul>
               </div>
             )}
           </aside>

@@ -2,11 +2,27 @@
 @import '../styles/custom-properties.css';
 .root {
     background: #151515;
-    padding: 10vw 10vh;
+    padding: 5vw 10vh 10vw 10vh;
 }
 
 .title {
     composes: responsiveTitle1 from '../components/typography.module.css';
+    font-size: 9vh;
+}
+
+.flatten {
+    width: 100%;
+    display: flex;
+    overflow-x: scroll;
+    white-space: nowrap;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    @nest & p {
+        margin: 1vh 20px 0 0;
+        padding: 0;
+        /* display: inline-block; */
+    }
 }
 
 .mainImage {
