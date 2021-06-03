@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { graphql } from "gatsby";
 import GraphQLErrorList from "../components/graphql-error-list";
 import SEO from "../components/seo";
@@ -38,8 +38,12 @@ export const query = graphql`
 `;
 
 const IndexPage = (props) => {
-  const [isFull, setFull] = useState(false);
+  // const [isFull, setFull] = useState(false);
+  const [size, setSize] = useState();
   const { data, errors } = props;
+  useEffect(() => {
+    setSize(window.innerWidth);
+  });
 
   if (errors) {
     return (
@@ -74,18 +78,16 @@ const IndexPage = (props) => {
         </HeroText>
         <Hyperlink to="/contact" text="Lets talk." />
       </ContainHero>
-      {site && (
-        <>
-          {window.innerWidth > 858 ? (
-            <Section>
-              <LatestWorks expand={false} works={data.allSanityPost} />
-              <Pong />
-              {/* setPongSize={switchPongSize} */}
-            </Section>
-          ) : (
-            <LatestWorks expand={true} works={data.allSanityPost} />
-          )}
-        </>
+      {size > 858 && (
+        <Section>
+          <LatestWorks expand={false} works={data.allSanityPost} />
+          <Pong />
+        </Section>
+      )}
+      {size < 858 && (
+        <Section>
+          <LatestWorks expand={true} works={data.allSanityPost} />
+        </Section>
       )}
     </Layout>
   );
