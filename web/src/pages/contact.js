@@ -11,6 +11,8 @@ import {
   Message,
   Contact,
 } from "../styles/GlobalStyles";
+import { window } from "browser-monads";
+import EmailButton from "../components/Common/Submit";
 const About = () => (
   <Layout>
     <SEO title="About" />
@@ -23,52 +25,72 @@ const About = () => (
         >
           <div style={{ width: "100%" }}>
             <Contact>Say hello</Contact>
-            <Message>
-              Send a message to{" "}
-              <span style={{ fontWeight: "bold", textDecoration: "underline" }}>
+            {window.innerWidth > 858 ? (
+              <>
+                <Message>
+                  Send a message to{" "}
+                  <span
+                    style={{ fontWeight: "bold", textDecoration: "underline" }}
+                  >
+                    <a href="mailto:tomaslawton@gmail.com?subject=Email to Tomas&body=Hello, world!">
+                      tomaslawton@gmail.com
+                    </a>
+                  </span>{" "}
+                  or using the form below!
+                </Message>
+                <hr />
+                <MyForm>
+                  <ContactField
+                    type="text"
+                    id="fname"
+                    name="firstname"
+                    placeholder="Your name.."
+                    autocomplete="off"
+                  />
+                  <ContactField
+                    type="email"
+                    id="ename"
+                    name="email"
+                    placeholder="Your email..."
+                    autocomplete="off"
+                  />
+                  <ContactField
+                    type="text"
+                    id="lname"
+                    name="lastname"
+                    placeholder="Subject..."
+                    autocomplete="off"
+                  />
+                  <Textarea
+                    type="textarea"
+                    style={{ height: "100px" }}
+                    id="subject"
+                    name="subject"
+                    placeholder="Write something.."
+                    autocomplete="off"
+                  />
+                </MyForm>
+
+                <div style={{ width: "100%", display: "flex" }}>
+                  <Submit text="Send" />
+                </div>
+              </>
+            ) : (
+              <>
+                <Message>
+                  Send a message to{" "}
+                  <span
+                    style={{ fontWeight: "bold", textDecoration: "underline" }}
+                  >
+                    tomaslawton@gmail.com
+                  </span>{" "}
+                  or open your email app using this button!
+                </Message>
                 <a href="mailto:tomaslawton@gmail.com?subject=Email to Tomas&body=Hello, world!">
-                  tomaslawton@gmail.com
+                  <EmailButton to={"/contact/"} text={"Email App"} />
                 </a>
-              </span>{" "}
-              or using the form below!
-            </Message>
-            <hr />
-          </div>
-
-          <MyForm>
-            <ContactField
-              type="text"
-              id="fname"
-              name="firstname"
-              placeholder="Your name.."
-              autocomplete="off"
-            />
-            <ContactField
-              type="email"
-              id="ename"
-              name="email"
-              placeholder="Your email..."
-              autocomplete="off"
-            />
-            <ContactField
-              type="text"
-              id="lname"
-              name="lastname"
-              placeholder="Subject..."
-              autocomplete="off"
-            />
-            <Textarea
-              type="textarea"
-              style={{ height: "100px" }}
-              id="subject"
-              name="subject"
-              placeholder="Write something.."
-              autocomplete="off"
-            />
-          </MyForm>
-
-          <div style={{ width: "100%", display: "flex" }}>
-            <Submit text="Send" />
+              </>
+            )}
           </div>
         </ContactCard>
       </div>

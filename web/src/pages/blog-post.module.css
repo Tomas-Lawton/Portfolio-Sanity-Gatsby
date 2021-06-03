@@ -44,6 +44,19 @@
             }
         }
     }
+    @nest & p {
+        font-family: Open Sans;
+    }
+    @nest & figcaption {
+        /* margin-bottom: 2vh; */
+        display: none;
+    }
+    @nest & img {
+        padding-bottom: 5vh;
+    }
+    /* @nest & img {
+        margin: 1vh 0 1vh;
+    } */
     @nest & h2,
     & h3,
     & h4,
@@ -69,7 +82,7 @@
 }
 
 .categories {
-    border-top: 1px solid var(--color-very-light-gray);
+    border-top: 2px solid var(--color-very-light-gray);
     margin: 2rem 0 3rem;
     @nest & ul {
         list-style: none;

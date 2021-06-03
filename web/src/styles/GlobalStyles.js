@@ -118,7 +118,7 @@ export const FullContainer = styled.div `
   // padding: 5vw;
 `;
 
-export const ContactCard = styled.form `
+export const ContactCard = styled.div `
   display: flex;
   flex-direction: column;
   // width: 100%;
@@ -127,7 +127,7 @@ export const ContactCard = styled.form `
   padding: 2vw;
 `;
 
-export const MyForm = styled.div `
+export const MyForm = styled.form `
   width: 100%;
   display: flex;
   flex-direction: column;

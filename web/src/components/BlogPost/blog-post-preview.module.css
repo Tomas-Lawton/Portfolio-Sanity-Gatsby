@@ -93,6 +93,10 @@
     padding-bottom: 30px;
 }
 
+li {
+    font-family: Open Sans;
+}
+
 .rectBox {
     width: 60%;
     height: 8vh;

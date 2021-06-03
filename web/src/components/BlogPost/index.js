@@ -34,8 +34,8 @@ const BlogPostPreview = (props) => (
               {props.mainImage && props.mainImage.asset && (
                 <img
                   src={imageUrlFor(buildImageObj(props.mainImage))
-                    .width(600)
-                    .height(Math.floor((9 / 16) * 600))
+                    .width(1200)
+                    .height(Math.floor((9 / 16) * 1200))
                     .auto("format")
                     .url()}
                   alt={props.mainImage.alt}
