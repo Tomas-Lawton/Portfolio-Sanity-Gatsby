@@ -2,9 +2,7 @@ import * as styles from "./blog-post.module.css";
 import { differenceInDays, formatDistance, format } from "date-fns";
 import BlogContainer from "../components/BlogContainer";
 import PortableText from "../components/portableText";
-import React, { useEffect, useState } from "react";
-import { buildImageObj } from "../lib/helpers";
-import { imageUrlFor } from "../lib/image-url";
+import React from "react";
 
 function BlogPost(props) {
   const { _rawBody, categories, title, publishedAt } = props;
@@ -15,7 +13,9 @@ function BlogPost(props) {
         <div className={styles.grid}>
           <div className={styles.mainContent}>
             <h1 className={styles.title}>{title}</h1>
-            <h3>{format(new Date(publishedAt), "MMMM Mo, yyyy")}</h3>
+            {publishedAt && (
+              <h3>{format(new Date(publishedAt), "MMMM Mo, yyyy")}</h3>
+            )}
             {categories && (
               // <div className={styles.categories}>
               <div className={styles.flatten}>
