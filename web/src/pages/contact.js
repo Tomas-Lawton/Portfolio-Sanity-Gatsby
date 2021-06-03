@@ -15,7 +15,7 @@ import { window } from "browser-monads";
 import EmailButton from "../components/Common/Submit";
 const About = () => (
   <Layout>
-    <SEO title="About" />
+    <SEO title="Contact" />
     <div style={{ background: "#151515", height: "100%", width: "100%" }}>
       <div style={{ width: "100%", padding: "5vh 5vw 0 5vw" }}>
         <ContactCard

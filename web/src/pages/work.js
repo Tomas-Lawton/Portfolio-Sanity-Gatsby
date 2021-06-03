@@ -92,7 +92,7 @@ const Work = (props) => {
 
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO title="Work" />
       <div style={{ width: "100%", height: "100%" }}>
         <Container>
           {" "}

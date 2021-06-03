@@ -6,7 +6,7 @@ import { QRContainer, QR } from "../styles/GlobalStyles";
 import QRDemo from "../images/QRDemo.svg";
 const QRCode = () => (
   <Layout>
-    <SEO title="Home" />
+    <SEO title="QR" />
     <QRContainer>
       <QR src={QRDemo} />
     </QRContainer>
