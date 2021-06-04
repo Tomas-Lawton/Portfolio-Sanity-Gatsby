@@ -2,7 +2,7 @@
 @import '../styles/custom-properties.css';
 .root {
     background: #151515;
-    padding: 5vw 10vh 10vw 10vh;
+    padding: 5vw 8vh 10vw 8vh;
     @media only screen and (max-width: 858px) {
         padding: 5vw 1vh 10vw 1vh;
     }
@@ -10,7 +10,7 @@
 
 .title {
     composes: responsiveTitle1 from '../components/typography.module.css';
-    font-size: 9vh;
+    font-size: 4vw;
 }
 
 .flatten {

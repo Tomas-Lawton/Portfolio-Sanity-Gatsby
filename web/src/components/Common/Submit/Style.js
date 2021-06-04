@@ -1,13 +1,13 @@
 import styled from "styled-components";
-export const NewArrow = styled.img`
-  height: 4vh;
+export const NewArrow = styled.img `
+  height: 32px;
   width: auto;
 `;
 
-export const ContainButton = styled.button`
+export const ContainButton = styled.button `
   background: none;
   display: flex;
-  min-width: 130px;
+  width: 130px;
   justify-content: space-between;
   align-items: center;
   margin: 0;
@@ -22,7 +22,7 @@ export const ContainButton = styled.button`
   }
 `;
 
-export const ButtonText = styled.h2`
+export const ButtonText = styled.h2 `
   margin: 0;
   padding: 0;
   font-weight: 400;

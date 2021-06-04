@@ -11,6 +11,7 @@ import {
   Message,
   Contact,
   IconImg,
+  ContainSocials,
 } from "../styles/GlobalStyles";
 import { window } from "browser-monads";
 import EmailButton from "../components/Common/Submit";
@@ -92,20 +93,12 @@ const About = () => (
                   or open your email app using this button!
                 </Message>
                 <a href="mailto:tomaslawton@gmail.com?subject=Email to Tomas&body=Hello, world!">
-                  <EmailButton to={"/contact/"} text={"Email App"} />
+                  <EmailButton to={"/contact/"} text={"Email"} />
                 </a>
               </>
             )}
           </div>
-          <div
-            style={{
-              width: "100%",
-              display: "flex",
-              justifyContent: "flex-end",
-              marginTop: "2vh",
-              height: "60px",
-            }}
-          >
+          <ContainSocials>
             <Link to={"https://www.instagram.com/soju_club/"}>
               <IconImg src={Insta} />
             </Link>
@@ -115,7 +108,7 @@ const About = () => (
             <Link to={"https://www.facebook.com/TomasLawton"}>
               <IconImg src={Facebook} />
             </Link>
-          </div>
+          </ContainSocials>
         </ContactCard>
       </div>
     </div>

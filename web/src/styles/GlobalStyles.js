@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ContainHero = styled.div `
+export const ContainHero = styled.div`
   // position: fixed;
   // z-Index: 3;
   font-weight: bold;
@@ -18,12 +18,12 @@ export const ContainHero = styled.div `
     }
   }
 `;
-export const HeroText = styled.h1 `
+export const HeroText = styled.h1`
   font-weight: 400;
   font-size: ${(props) => (props.size ? props.size : "4.5vh")};
 `;
 
-export const Section = styled.div `
+export const Section = styled.div`
   display: flex;
   height: 100%;
   h2,
@@ -32,20 +32,20 @@ export const Section = styled.div `
   }
 `;
 
-export const AboutSection = styled.div `
+export const AboutSection = styled.div`
   display: flex;
   h2,
   h1 {
     font-family: "Merriweather", serif;
   }
 `;
-export const HeroImage = styled.div `
+export const HeroImage = styled.div`
   margin-bottom: 1vh;
   padding: 0;
   background-size: cover;
 `;
 
-export const FillImage = styled.img `
+export const FillImage = styled.img`
 margin: 0;
 padding: 0;
 width: 100%;
@@ -57,7 +57,7 @@ overflow: 'hidden',
 backgroundSize : 'contain',
 `;
 
-export const AboutContain = styled.div `
+export const AboutContain = styled.div`
   padding: 5vh;
   background-color: #151515;
   display: block;
@@ -65,7 +65,7 @@ export const AboutContain = styled.div `
   opacity: 0.95;
 `;
 
-export const AboutText = styled.h1 `
+export const AboutText = styled.h1`
   font-weight: 400;
   font-size: 2.5vh;
   display: block;
@@ -73,12 +73,12 @@ export const AboutText = styled.h1 `
   padding: 0;
 `;
 
-export const ContainItems = styled.p `
+export const ContainItems = styled.p`
   font-family: Open Sans;
   width: 100%;
 `;
 
-export const QRContainer = styled.div `
+export const QRContainer = styled.div`
   width: 100%;
   height: 100%;
   background: #151515;
@@ -87,7 +87,7 @@ export const QRContainer = styled.div `
   align-items: center;
 `;
 
-export const NotFoundContainer = styled.div `
+export const NotFoundContainer = styled.div`
   width: 100%;
   height: 100%;
   background: #151515;
@@ -100,13 +100,13 @@ export const NotFoundContainer = styled.div `
   text-align: center;
 `;
 
-export const ExpandedLinks = styled.div `
+export const ExpandedLinks = styled.div`
   display: flex;
   width: 80%;
   justify-content: space-between;
 `;
 
-export const QR = styled.img `
+export const QR = styled.img`
   width: 40vw;
   height: auto;
   @media only screen and (max-width: 858px) {
@@ -115,13 +115,35 @@ export const QR = styled.img `
   }
 `;
 
-export const IconImg = styled.img `
-  width: 4vh;
-  height: auto;
-  margin-left: 30px;
+export const ContainSocials = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margintop: 2vh;
+  height: 60px;
+  @media only screen and (max-width: 858px) {
+    justify-content: flex-start;
+  }
 `;
 
-export const MinimalText = styled.p `
+export const IconImg = styled.img`
+  transition: 500ms;
+  width: 30px;
+  height: auto;
+  margin: 3vh 0 0 40px;
+  &:hover {
+    width: 36px;
+  }
+  @media only screen and (max-width: 858px) {
+    width: 18px;
+    &:hover {
+      width: 34px;
+    }
+    margin: 3vh 30px 0 0;
+  }
+`;
+
+export const MinimalText = styled.p`
   font-family: Open Sans;
   // font-weight: 300;
   font-size: 1.6vh;
@@ -132,17 +154,17 @@ export const MinimalText = styled.p `
   // width: ${(props) => (props.width ? props.width : "100%")}
 `;
 
-export const Message = styled.p `
+export const Message = styled.p`
   font-family: Open Sans;
 `;
 
-export const Contact = styled.h1 `
+export const Contact = styled.h1`
   font-family: Merriweather;
   font-weight: 400;
   font-size: 8vh;
 `;
 
-export const FullContainer = styled.div `
+export const FullContainer = styled.div`
   width: 100%;
   height: 100%;
   background-color: #151515;
@@ -152,7 +174,7 @@ export const FullContainer = styled.div `
   // padding: 5vw;
 `;
 
-export const ContactCard = styled.div `
+export const ContactCard = styled.div`
   display: flex;
   flex-direction: column;
   // width: 100%;
@@ -161,7 +183,7 @@ export const ContactCard = styled.div `
   padding: 2vw;
 `;
 
-export const MyForm = styled.form `
+export const MyForm = styled.form`
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -175,7 +197,7 @@ export const MyForm = styled.form `
   }
 `;
 
-export const ContactField = styled.input `
+export const ContactField = styled.input`
   border-style: none;
   margin: 10px 0;
   padding: 15px;
@@ -196,7 +218,7 @@ export const ContactField = styled.input `
   }
 `;
 
-export const Textarea = styled.textarea `
+export const Textarea = styled.textarea`
   // box-shadow: rgba(0, 0, 0, 0.01) 0px 4px 12px;
   border-style: none;
   margin: 10px 0 30px 0;

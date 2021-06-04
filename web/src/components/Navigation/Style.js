@@ -10,7 +10,8 @@ export const NavContainer = styled.div `
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  width: 25vw;
+  width: 27vw;
+  max-width: 280px;
   padding: 5vw 3.5vw 5vh 3.5vw;
 `;
 

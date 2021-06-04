@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ContainLinks = styled.div`
+export const ContainLinks = styled.div `
   display: flex;
   flex-direction: column;
   height: 15%;
@@ -11,7 +11,7 @@ export const ContainLinks = styled.div`
   font-family: Open Sans;
 `;
 
-export const NavLinkItem = styled.div`
+export const NavLinkItem = styled.div `
   display: flex;
   justify-content: space-between;
   height: 5vh;
@@ -22,7 +22,7 @@ export const NavLinkItem = styled.div`
   }
 `;
 
-export const AnimateArrow = styled.img`
+export const AnimateArrow = styled.img `
   animation-duration: 1s;
   animation-name: slidein;
   @keyframes slidein {
