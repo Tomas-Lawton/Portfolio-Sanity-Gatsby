@@ -51,7 +51,7 @@ export const RightContent = styled.div `
   // margin: 5vh 5vw 0 5vw;
   // padding: 0 0 5vh 0;
   // margin: 0 5vw 5vh 5vw;
-  height: calc(100% - 10px);
+  height: calc(100% - 7vh);
   // height: 100%;
   // margin-bottom: 3vh;
 `;

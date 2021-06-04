@@ -24,7 +24,7 @@ export const query = graphql`
       description
       keywords
     }
-    allSanityPost(limit: 5) {
+    allSanityPost(limit: 5, sort: { fields: publishedAt, order: DESC }) {
       edges {
         node {
           title

@@ -15,6 +15,16 @@ function Pong({ setPongSize, isFull, expand }) {
   return (
     // <SectionRight isFull onClick={setPongSize}>
     <SectionRight expand={expand}>
+      <h1
+        style={{
+          fontFamily: "Open Sans",
+          // fontWeight: "400",
+          fontSize: "2.5vh",
+          marginBottom: "1vh",
+        }}
+      >
+        Play Pong
+      </h1>
       <RightContent expand={expand}>
         <Canvas updateScore={updateScore} />
       </RightContent>
@@ -24,6 +34,7 @@ function Pong({ setPongSize, isFull, expand }) {
           height: "5px",
           display: "flex",
           justifyContent: "space-between",
+          top: "-5px",
         }}
       >
         <MinimalText setMargin="0" width="30px">

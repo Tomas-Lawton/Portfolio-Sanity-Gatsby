@@ -13,7 +13,16 @@ function Latest(props) {
   return (
     <SectionLeft expand={props.expand}>
       <Left>
-        <h1 style={{ fontFamily: "Open Sans" }}>Latest Works</h1>
+        <h1
+          style={{
+            fontFamily: "Open Sans",
+            // fontWeight: "400",
+            fontSize: "2.5vh",
+            marginBottom: "1vh",
+          }}
+        >
+          Latest Works
+        </h1>
         {props.works &&
           props.works.edges.map((item, index) => (
             <Item
