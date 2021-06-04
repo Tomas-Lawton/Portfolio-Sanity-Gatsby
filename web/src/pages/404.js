@@ -3,6 +3,7 @@ import React from "react";
 import SEO from "../components/seo";
 import Link from "gatsby-link";
 import { NotFoundContainer, ExpandedLinks } from "../styles/GlobalStyles";
+import "../styles/GlobalDOMStyle.css";
 
 const NotFoundPage = () => (
   <Layout>
