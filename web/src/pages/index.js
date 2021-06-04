@@ -6,7 +6,13 @@ import Layout from "../components/Layout";
 import "../styles/GlobalDOMStyle.css";
 import LatestWorks from "../components/Home/LatestWorks";
 import Pong from "../components/Home/Pong";
-import { ContainHero, HeroText } from "../styles/GlobalStyles";
+import {
+  ContainHero,
+  HeroText,
+  Atlassian,
+  Accenture,
+  Name,
+} from "../styles/GlobalStyles";
 import { Section } from "../styles/GlobalStyles";
 import { Hyperlink } from "../components/Common/Hyperlink";
 import { window } from "browser-monads";
@@ -71,10 +77,23 @@ const IndexPage = (props) => {
         keywords={site.keywords}
       />
       <ContainHero>
-        <HeroText size="4vh">
-          Hey, I'm Tomas! I'm a creative engineer combining a lateral approach
-          with exceptional technical ability to design, build and test novel
-          solutions to wicked and socio-technical problems.
+        <HeroText size="5vh">
+          Hey, I'm{" "}
+          <Name>
+            <span>T</span>
+            <span>o</span>
+            <span>m</span>
+            <span>a</span>
+            <span>s</span>
+            <span>!</span>
+          </Name>
+        </HeroText>
+        <HeroText size="3vh">
+          {" "}
+          I'm an <Atlassian>ex-Atlassian</Atlassian> creative engineer at{" "}
+          <Accenture>Accenture</Accenture>. I combine lateral thinking with
+          outstanding technical skills to design, build and test novel solutions
+          and build delightful products.
         </HeroText>
         <Hyperlink to="/contact" text="Lets talk." />
       </ContainHero>

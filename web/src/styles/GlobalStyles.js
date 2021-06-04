@@ -1,5 +1,6 @@
 import styled from "styled-components";
-
+import AtlassianEmoji from "../images/emojis/rocket.png";
+import AccentureEmoji from "../images/emojis/fire.png";
 export const ContainHero = styled.div`
   // position: fixed;
   // z-Index: 3;
@@ -11,13 +12,71 @@ export const ContainHero = styled.div`
   padding: 5vw;
   width: 100%;
   &:hover {
-    background-color: #ffe661;
+    // background-color: #ffe661;
+    background: rgba(240, 240, 240, 0.3);
+    // opacity: 0.5;
     color: #151515;
     a {
       color: #151515;
     }
   }
 `;
+export const Atlassian = styled.span`
+  color: #0065ff;
+  font-weight: bold;
+  &:hover {
+    cursor: url(${AtlassianEmoji}), pointer;
+  }
+`;
+
+export const Accenture = styled.span`
+  color: #a100ff;
+  font-weight: bold;
+  &:hover {
+    cursor: url(${AccentureEmoji}), pointer;
+  }
+`;
+
+export const Name = styled.span`
+  font-weight: bold;
+  &:hover {
+    span {
+      position: relative;
+      top: 8px;
+      // display: inline-block;
+      animation: bounce 0.4s ease infinite alternate;
+      color: #000;
+    }
+    span:nth-child(1) {
+      animation-delay: 0s;
+    }
+    span:nth-child(2) {
+      animation-delay: 0.1s;
+    }
+    span:nth-child(3) {
+      animation-delay: 0.2s;
+    }
+    span:nth-child(4) {
+      animation-delay: 0.3s;
+    }
+    span:nth-child(5) {
+      animation-delay: 0.4s;
+    }
+    span:nth-child(6) {
+      animation-delay: 0.5s;
+    }
+    span:nth-child(7) {
+      animation-delay: 0.6s;
+    }
+  }
+
+  @keyframes bounce {
+    100% {
+      top: -5px;
+    }
+  }
+`;
+
 export const HeroText = styled.h1`
   font-weight: 400;
   font-size: ${(props) => (props.size ? props.size : "4.5vh")};
