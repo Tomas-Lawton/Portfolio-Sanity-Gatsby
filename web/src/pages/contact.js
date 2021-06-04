@@ -10,9 +10,15 @@ import {
   Textarea,
   Message,
   Contact,
+  IconImg,
 } from "../styles/GlobalStyles";
 import { window } from "browser-monads";
 import EmailButton from "../components/Common/Submit";
+import Facebook from "../images/Icon/facebookIcon.svg";
+import Insta from "../images/Icon/instaIcon.svg";
+import LinkedIn from "../images/Icon/linkedinIcon.svg";
+import Link from "gatsby-link";
+
 const About = () => (
   <Layout>
     <SEO title="Contact" />
@@ -70,7 +76,6 @@ const About = () => (
                     autocomplete="off"
                   />
                 </MyForm>
-
                 <div style={{ width: "100%", display: "flex" }}>
                   <Submit text="Send" />
                 </div>
@@ -91,6 +96,25 @@ const About = () => (
                 </a>
               </>
             )}
+          </div>
+          <div
+            style={{
+              width: "100%",
+              display: "flex",
+              justifyContent: "flex-end",
+              marginTop: "2vh",
+              height: "60px",
+            }}
+          >
+            <Link to={"https://www.instagram.com/soju_club/"}>
+              <IconImg src={Insta} />
+            </Link>
+            <Link to={"https://www.linkedin.com/in/tomas-lawton-512066199/"}>
+              <IconImg src={LinkedIn} />
+            </Link>
+            <Link to={"https://www.facebook.com/TomasLawton"}>
+              <IconImg src={Facebook} />
+            </Link>
           </div>
         </ContactCard>
       </div>

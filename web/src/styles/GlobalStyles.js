@@ -115,6 +115,12 @@ export const QR = styled.img `
   }
 `;
 
+export const IconImg = styled.img `
+  width: 4vh;
+  height: auto;
+  margin-left: 30px;
+`;
+
 export const MinimalText = styled.p `
   font-family: Open Sans;
   // font-weight: 300;
