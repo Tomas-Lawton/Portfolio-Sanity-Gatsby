@@ -18,7 +18,7 @@ function Latest(props) {
             fontFamily: "Open Sans",
             // fontWeight: "400",
             fontSize: "2.5vh",
-            marginBottom: "1vh",
+            marginBottom: "2vh",
           }}
         >
           Latest Works

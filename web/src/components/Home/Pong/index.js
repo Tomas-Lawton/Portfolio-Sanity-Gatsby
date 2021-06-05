@@ -20,7 +20,7 @@ function Pong({ setPongSize, isFull, expand }) {
           fontFamily: "Open Sans",
           // fontWeight: "400",
           fontSize: "2.5vh",
-          marginBottom: "1vh",
+          marginBottom: "2vh",
         }}
       >
         Play Pong

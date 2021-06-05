@@ -89,13 +89,12 @@ const IndexPage = (props) => {
           </Name>
         </HeroText>
         <HeroText size="3vh">
-          {" "}
           I'm an <Atlassian>ex-Atlassian</Atlassian> creative engineer at{" "}
           <Accenture>Accenture</Accenture>. I combine lateral thinking with
-          outstanding technical skills to design, build and test novel solutions
-          and build delightful products.
+          outstanding technical skills to design, build and test delightful
+          products.
         </HeroText>
-        <Hyperlink to="/contact" text="Lets talk." />
+        <Hyperlink to="/contact" text="Let's talk." />
       </ContainHero>
       {size > 858 && (
         <Section>

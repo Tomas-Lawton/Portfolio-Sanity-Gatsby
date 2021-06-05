@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import Link from "gatsby-link";
 import { ContainLinks, NavLinkItem, AnimateArrow } from "./Style";
 import LinkArrow from "../../../images/LinkArrow.svg";
+import CV from "../../../images/cv/cv.pdf";
 
 export const navigationLinks = [
   { route: "/work", name: "Work" },
   { route: "/contact", name: "Contact" },
   {
-    route:
-      "https://drive.google.com/drive/folders/1Pb361NlT98eG_0-efPcgNLL_G8ZZQsX5?usp=sharing",
+    route: "skip",
     name: "CV",
   },
   { route: "/qrcode", name: "QR" },
@@ -27,8 +27,8 @@ const NavLinks = ({ isLarge }) => {
       {" "}
       {navigationLinks.map((NavItem, index) => (
         <NavLinkItem key={index}>
-          {NavItem.route.includes("https") ? (
-            <a href={NavItem.route} target="_blank" rel="noreferrer">
+          {NavItem.route.includes("skip") ? (
+            <a href={CV} target="_blank" rel="noreferrer">
               {NavItem.name}
             </a>
           ) : (
