@@ -13,6 +13,13 @@ export const NavContainer = styled.div `
   width: 27vw;
   max-width: 280px;
   padding: 5vw 3.5vw 5vh 3.5vw;
+
+  @media only screen and (min-width: 2000px) {
+    padding: 5vh;
+  }
+  @media only screen and (min-height: 1362px) {
+    max-width: none;
+  }
 `;
 
 export const CallToAction = styled.div `
