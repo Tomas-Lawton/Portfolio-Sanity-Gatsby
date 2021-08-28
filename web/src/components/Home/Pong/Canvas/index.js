@@ -217,7 +217,8 @@ const Canvas = ({ updateScore }) => {
         pong.start();
       });
     };
-  }, [updateScore]);
+    // eslint-disable-next-line
+  }, []);
 
   return (
       <FullSizeCanvas ref={canvasReference}></FullSizeCanvas>
