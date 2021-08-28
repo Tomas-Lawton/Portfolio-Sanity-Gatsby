@@ -165,7 +165,7 @@ export const ExpandedLinks = styled.div `
   justify-content: space-between;
 `;
 
-export const QR = styled.img `
+export const Qr = styled.img `
   width: 40vw;
   height: auto;
   @media only screen and (max-width: 858px) {

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import PropTypes from "prop-types";
 import Navigation from "../Navigation";
 import {
@@ -7,7 +7,6 @@ import {
   FillGradient,
   SmallNav,
   TopBar,
-  StyledNavLink,
   BottomBar,
 } from "./Style";
 import { graphql, useStaticQuery } from "gatsby";
@@ -53,34 +52,33 @@ const Layout = ({ children }) => {
     );
   }
 
-  const handleBurger = () => {
-    setBurger(!isBurged);
-  };
+  const handleBurgerChange = useCallback(() => {
+      setBurger(!isBurged);
+    }, [isBurged, setBurger])
 
   return (
     <FillGradient>
       <GlobalStyles>
         <PageContent>
-          {" "}
           {!showNav && (
             <SmallNav>
               <TopBar>
-                <HomeLink isSmall />
-                <a onClick={handleBurger}>
-                  <Hamburger style={{ padding: 0 }} />{" "}
-                </a>{" "}
-              </TopBar>{" "}
+                <HomeLink isSmall/>
+                <div aria-hidden="true" onClick={handleBurgerChange} onKeyDown={handleBurgerChange}>
+                  <Hamburger /> 
+                </div>
+              </TopBar> 
               {isBurged && (
                 <BottomBar style={{ margin: 0, marginTop: "2vh", padding: 0 }}>
-                  <NavLinks isLarge={true} />{" "}
+                  <NavLinks isLarge={true} /> 
                 </BottomBar>
-              )}{" "}
+              )} 
             </SmallNav>
-          )}{" "}
-          {children}{" "}
-        </PageContent>{" "}
-        {showNav && <Navigation />}{" "}
-      </GlobalStyles>{" "}
+          )} 
+          {children} 
+        </PageContent> 
+        {showNav && <Navigation />} 
+      </GlobalStyles> 
     </FillGradient>
   );
 };

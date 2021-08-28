@@ -6,7 +6,7 @@ import React from "react";
 import { format } from "date-fns";
 import { imageUrlFor } from "../../lib/image-url";
 import ArrowLink from "../Common/ArrowLink";
-import { BigNumber, Fixer, Cat } from "./Style";
+import { BigNumber, Fixer } from "./Style";
 import { window } from "browser-monads";
 
 const BlogPostPreview = (props) => (
