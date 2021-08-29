@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/GlobalDOMStyle.css";
 import Layout from "../components/Layout";
-import  SearchEngine from "../components/SearchEngine";
+import SearchEngine from "../components/SearchEngine";
 import Submit from "../components/Common/Submit";
 import {
   ContactCard,
@@ -37,17 +37,18 @@ const About = () => (
                     <a href="mailto:tomaslawton@gmail.com?subject=Email to Tomas&body=Hello, world!">
                       tomaslawton@gmail.com
                     </a>
-                  </span>
-                  {" "}or using the form below!
+                  </span>{" "}
+                  or using the form below!
                 </Message>
                 <hr />
                 <MyForm
                   autocomplete="off"
-                  name="contact" 
-                  method="POST" 
-                  data-netlify="true" 
-                  >
-                  <input type="hidden" name="form-name" value="contact" />
+                  name="contact"
+                  method="POST"
+                  data-netlify="true"
+                  data-netlify-honeypot="bot-field"
+                >
+                  <input type="hidden" name="contact" value="contact" />
                   <ContactField
                     type="text"
                     id="name"
@@ -78,20 +79,24 @@ const About = () => (
                     autocomplete="off"
                   />
                   <div data-netlify-recaptcha="true"></div>
+                  <div style={{ width: "100%", display: "flex" }}>
+                    <Submit
+                      type="submit"
+                      onClick={this.form.submit()}
+                      text="Send"
+                    />
+                  </div>
                 </MyForm>
-                <div style={{ width: "100%", display: "flex" }}>
-                  <Submit text="Send"/>
-                </div>
               </>
             ) : (
               <>
                 <Message>
-                  Send a message to 
+                  Send a message to
                   <span
                     style={{ fontWeight: "bold", textDecoration: "underline" }}
                   >
                     tomaslawton@gmail.com
-                  </span> 
+                  </span>
                   or open your email app using this button!
                 </Message>
                 <a href="mailto:tomaslawton@gmail.com?subject=Email to Tomas&body=Hello, world!">

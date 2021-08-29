@@ -3,7 +3,9 @@ import { NewArrow, ContainButton, ButtonText } from "./Style";
 import ButtonArrow from "../../../images/ButtonArrow.svg";
 export const ArrowLink = ({ text }) => (
   <ContainButton>
-    <ButtonText onClick={() => console.log("Thanks! I'll be in touch. 🌴🔥🚀")}>{text}</ButtonText>
+    <ButtonText onClick={() => console.log("Thanks! I'll be in touch. 🌴🔥🚀")}>
+      {text}
+    </ButtonText>
     <NewArrow src={ButtonArrow} />
   </ContainButton>
 );

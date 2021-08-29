@@ -12,7 +12,6 @@ module.exports = {
     "gatsby-plugin-postcss",
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
-    "gatsby-plugin-styled-components",
     "babel-plugin-styled-components",
     {
       resolve: "gatsby-source-sanity",
@@ -22,6 +21,9 @@ module.exports = {
         watchMode: !isProd,
         overlayDrafts: !isProd,
       },
+    },
+    {
+      resolve: `gatsby-plugin-styled-components`,
     },
   ],
 };
