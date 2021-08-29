@@ -79,7 +79,7 @@ const IndexPage = (props) => {
       <ContainHero>
         <HeroText size="5vh">
           Hey, I'm{" "}
-          <Name className="gatsby-workaround">
+          <Name>
             <span>T</span>
             <span>o</span>
             <span>m</span>
