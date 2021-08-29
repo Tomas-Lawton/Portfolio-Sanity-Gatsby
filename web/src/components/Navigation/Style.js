@@ -1,5 +1,4 @@
 import styled from "styled-components";
-// import Link from "gatsby-link"
 
 export const NavContainer = styled.div `
   font-size: 300;
@@ -26,7 +25,7 @@ export const CallToAction = styled.div `
   display: flex;
   flex-direction: column;
   height: 13%;
-  justify-content: space-between;
+  justify-content: flex-end;
   font-weight: 400;
   width: 100%;
 `;

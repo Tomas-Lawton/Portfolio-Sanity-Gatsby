@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/GlobalDOMStyle.css";
 import Layout from "../components/Layout";
-import SEO from "../components/seo";
+import  SearchEngine from "../components/SearchEngine";
 import { graphql } from "gatsby";
 import {
   filterOutDocsPublishedInTheFuture,
@@ -73,7 +73,7 @@ const Work = (props) => {
   if (errors) {
     return (
       <Layout>
-        <GraphQLErrorList errors={errors} />{" "}
+        <GraphQLErrorList errors={errors} /> 
       </Layout>
     );
   }
@@ -92,20 +92,17 @@ const Work = (props) => {
 
   return (
     <Layout>
-      <SEO title="Work" />
+      <SearchEngine title="Work" />
       <div style={{ width: "100%", height: "100%" }}>
         <Container>
-          {" "}
-          {/* <h1 hidden>Welcome to {site.title}</h1> */}{" "}
-          {postNodes && (
+            {postNodes && (
             <BlogPostPreviewGrid
               title="Latest blog posts"
               nodes={postNodes}
-              // browseMoreHref="/archive/"
             />
-          )}{" "}
-        </Container>{" "}
-      </div>{" "}
+          )} 
+        </Container> 
+      </div> 
     </Layout>
   );
 };

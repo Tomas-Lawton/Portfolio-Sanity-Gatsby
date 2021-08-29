@@ -2,7 +2,7 @@ import React from "react";
 import { LatestWorkLink } from "../../Styles";
 import { getBlogUrl } from "../../../../lib/helpers";
 import Link from "gatsby-link";
-import { format, isFuture } from "date-fns";
+import { format } from "date-fns";
 
 const ListItem = ({ data }) => {
   const item = data[0];

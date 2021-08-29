@@ -5,9 +5,8 @@ import { graphql, useStaticQuery } from "gatsby";
 import { imageUrlFor } from "../lib/image-url";
 import { buildImageObj } from "../lib/helpers";
 
-function SEO({ description, lang, meta, keywords, title, image }) {
+const  SearchEngine = ({ description, lang, meta, keywords, title, image }) => {
   const { site } = useStaticQuery(detailsQuery) || {};
-
   const metaDescription = description || site.description || "";
   const siteTitle = site.title || "";
   const siteAuthor = site.author?.name || "";
@@ -71,13 +70,13 @@ function SEO({ description, lang, meta, keywords, title, image }) {
   );
 }
 
-SEO.defaultProps = {
+ SearchEngine.defaultProps = {
   lang: "en",
   meta: [],
   keywords: [],
 };
 
-SEO.propTypes = {
+ SearchEngine.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.array,
@@ -85,7 +84,7 @@ SEO.propTypes = {
   title: PropTypes.string.isRequired,
 };
 
-export default SEO;
+export default  SearchEngine;
 
 const detailsQuery = graphql`
   query DefaultSEOQuery {

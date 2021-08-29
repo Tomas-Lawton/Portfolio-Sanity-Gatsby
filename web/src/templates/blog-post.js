@@ -4,7 +4,7 @@ import React from "react";
 import GraphQLErrorList from "../components/graphql-error-list";
 import Layout from "../components/Layout";
 import Container from "../components/Container";
-import SEO from "../components/seo";
+import SearchEngine from "../components/SearchEngine";
 import { toPlainText } from "../lib/helpers";
 
 export const query = graphql`
@@ -62,21 +62,20 @@ const BlogPostTemplate = (props) => {
   const post = data && data.post;
   return (
     <Layout>
-      {" "}
-      {errors && <SEO title="GraphQL Error" />}{" "}
+      {errors && <SearchEngine title="GraphQL Error" />} 
       {post && (
-        <SEO
+        <SearchEngine
           title={post.title || "Untitled"}
           description={toPlainText(post._rawExcerpt)}
           image={post.mainImage}
         />
-      )}{" "}
+      )} 
       {errors && (
         <Container>
-          <GraphQLErrorList errors={errors} />{" "}
+          <GraphQLErrorList errors={errors} /> 
         </Container>
-      )}{" "}
-      {post && <BlogPost {...post} />}{" "}
+      )} 
+      {post && <BlogPost {...post} />} 
     </Layout>
   );
 };

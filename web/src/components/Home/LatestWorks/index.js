@@ -8,7 +8,7 @@ function Latest(props) {
   const [blurb, setBlurb] = useState("");
   useEffect(() => {
     setBlurb(props.works.edges[0].node.excerpt[0].children[0].text);
-  }, []);
+  }, [props.works.edges]);
 
   return (
     <SectionLeft expand={props.expand}>
@@ -16,9 +16,8 @@ function Latest(props) {
         <h1
           style={{
             fontFamily: "Open Sans",
-            // fontWeight: "400",
             fontSize: "2.5vh",
-            marginBottom: "2vh",
+            marginBottom: "1vh",
           }}
         >
           Latest Works

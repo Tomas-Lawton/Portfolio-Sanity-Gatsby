@@ -17,8 +17,9 @@ export const ContainButton = styled.button `
   color: white;
   border-color: white;
   transition: 500ms;
+  cursor: pointer;
   &:hover {
-    min-width: 140px;
+    background-color: #FF9558;
   }
 `;
 

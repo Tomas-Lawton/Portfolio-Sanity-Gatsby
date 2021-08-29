@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/GlobalDOMStyle.css";
 import Layout from "../components/Layout";
-import SEO from "../components/seo";
+import  SearchEngine from "../components/SearchEngine";
 import Submit from "../components/Common/Submit";
 import {
   ContactCard,
@@ -18,11 +18,10 @@ import EmailButton from "../components/Common/Submit";
 import Facebook from "../images/Icon/facebookIcon.svg";
 import Insta from "../images/Icon/instaIcon.svg";
 import LinkedIn from "../images/Icon/linkedinIcon.svg";
-import Link from "gatsby-link";
 
 const About = () => (
   <Layout>
-    <SEO title="Contact" />
+    <SearchEngine title="Contact" />
     <div style={{ background: "#151515", height: "100%", width: "100%" }}>
       <div style={{ width: "100%", padding: "5vh 5vw 0 5vw" }}>
         <ContactCard
@@ -35,18 +34,18 @@ const About = () => (
             {window.innerWidth > 858 ? (
               <>
                 <Message>
-                  Send a message to{" "}
+                  Send a message to
                   <span
                     style={{ fontWeight: "bold", textDecoration: "underline" }}
                   >
                     <a href="mailto:tomaslawton@gmail.com?subject=Email to Tomas&body=Hello, world!">
                       tomaslawton@gmail.com
                     </a>
-                  </span>{" "}
+                  </span>
                   or using the form below!
                 </Message>
                 <hr />
-                <MyForm>
+                <MyForm name="contact" method="POST" data-netlify="true">
                   <ContactField
                     type="text"
                     id="fname"
@@ -78,18 +77,18 @@ const About = () => (
                   />
                 </MyForm>
                 <div style={{ width: "100%", display: "flex" }}>
-                  <Submit text="Send" />
+                  <Submit text="Send"/>
                 </div>
               </>
             ) : (
               <>
                 <Message>
-                  Send a message to{" "}
+                  Send a message to 
                   <span
                     style={{ fontWeight: "bold", textDecoration: "underline" }}
                   >
                     tomaslawton@gmail.com
-                  </span>{" "}
+                  </span> 
                   or open your email app using this button!
                 </Message>
                 <a href="mailto:tomaslawton@gmail.com?subject=Email to Tomas&body=Hello, world!">
@@ -99,15 +98,15 @@ const About = () => (
             )}
           </div>
           <ContainSocials>
-            <Link to={"https://www.instagram.com/soju_club/"}>
+            <a href={"https://www.instagram.com/soju_club/"}>
               <IconImg src={Insta} />
-            </Link>
-            <Link to={"https://www.linkedin.com/in/tomas-lawton-512066199/"}>
+            </a>
+            <a href={"https://www.linkedin.com/in/tomas-lawton-512066199/"}>
               <IconImg src={LinkedIn} />
-            </Link>
-            <Link to={"https://www.facebook.com/TomasLawton"}>
+            </a>
+            <a href={"https://www.facebook.com/TomasLawton"}>
               <IconImg src={Facebook} />
-            </Link>
+            </a>
           </ContainSocials>
         </ContactCard>
       </div>

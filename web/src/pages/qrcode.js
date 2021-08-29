@@ -1,16 +1,16 @@
 import React from "react";
 import "../styles/GlobalDOMStyle.css";
 import Layout from "../components/Layout";
-import SEO from "../components/seo";
-import { QRContainer, QR } from "../styles/GlobalStyles";
+import  SearchEngine from "../components/SearchEngine";
+import { QRContainer, Qr } from "../styles/GlobalStyles";
 import QRDemo from "../images/QRDemo.svg";
-const QRCode = () => (
+const QrCode = () => (
   <Layout>
-    <SEO title="QR" />
+    <SearchEngine title="QR" />
     <QRContainer>
-      <QR src={QRDemo} />
+      <Qr src={QRDemo} />
     </QRContainer>
   </Layout>
 );
 
-export default QRCode;
+export default QrCode;

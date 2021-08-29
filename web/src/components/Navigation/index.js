@@ -11,35 +11,22 @@ const Navigation = () => (
   <NavContainer>
     <HomeLink />
     <NavLinks />
-    {window.location.pathname.includes("blog") ? (
       <CallToAction>
-        <BigLink to="/work" text="Go back"></BigLink>
+        <BigLink 
+          to={window.location.pathname.includes("blog") ? "/work" : "/contact"} 
+          text={window.location.pathname.includes("blog") ? "Go Back" : "Hire Me"}
+        />
         <Link
-          to="/work"
+          to={window.location.pathname.includes("blog") ? "/work" : "/contact"}
           style={{
             marginBottom: "0",
             display: "flex",
             justifyContent: "center",
           }}
         >
-          <img src={ChevronForward} />
+          <img style={{marginTop: "10%"}} src={ChevronForward} alt="Go back"/>
         </Link>
       </CallToAction>
-    ) : (
-      <CallToAction>
-        <BigLink to="/contact" text="Hire Me"></BigLink>
-        <Link
-          to="/contact"
-          style={{
-            marginBottom: "0",
-            display: "flex",
-            justifyContent: "center",
-          }}
-        >
-          <img src={ChevronForward} />
-        </Link>
-      </CallToAction>
-    )}
   </NavContainer>
 );
 

@@ -217,14 +217,11 @@ const Canvas = ({ updateScore }) => {
         pong.start();
       });
     };
+    // eslint-disable-next-line
   }, []);
 
   return (
-    <>
-      {" "}
-      {/* <p>oiweoi</p> */}{" "}
-      <FullSizeCanvas ref={canvasReference}> </FullSizeCanvas>{" "}
-    </>
+      <FullSizeCanvas ref={canvasReference}></FullSizeCanvas>
   );
 };
 

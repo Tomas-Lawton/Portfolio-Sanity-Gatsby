@@ -34,7 +34,7 @@ export const AnimateArrow = styled.img `
       opacity: 100;
     }
   }
-  width: ${(props) => (props.isLarge ? "7vw" : "3vw")};
+  width: ${(props) => (props.isLarge ? "7vw" : "2vw")};
   margin-right: ${(props) => props.isLarge && "11.5px"};
   height: auto;
 `;

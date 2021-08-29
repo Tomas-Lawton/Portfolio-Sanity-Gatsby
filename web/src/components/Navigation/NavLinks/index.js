@@ -24,7 +24,6 @@ const NavLinks = ({ isLarge }) => {
 
   return (
     <ContainLinks>
-      {" "}
       {navigationLinks.map((NavItem, index) => (
         <NavLinkItem key={index}>
           {NavItem.route.includes("skip") ? (
@@ -36,9 +35,9 @@ const NavLinks = ({ isLarge }) => {
           )}
           {route === NavItem.route && (
             <AnimateArrow isLarge={isLarge} src={LinkArrow} />
-          )}{" "}
+          )} 
         </NavLinkItem>
-      ))}{" "}
+      ))} 
     </ContainLinks>
   );
 };
