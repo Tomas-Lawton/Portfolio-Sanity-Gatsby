@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import "../styles/GlobalDOMStyle.css";
 import Layout from "../components/Layout";
 import SearchEngine from "../components/SearchEngine";
 import Submit from "../components/Common/Submit";
-import { navigate } from "gatsby-link";
 import {
   ContactCard,
   ContactField,
@@ -19,33 +18,30 @@ import EmailButton from "../components/Common/Submit";
 import Facebook from "../images/Icon/facebookIcon.svg";
 import Insta from "../images/Icon/instaIcon.svg";
 import LinkedIn from "../images/Icon/linkedinIcon.svg";
-
-function encode(data) {
-  return Object.keys(data)
-    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-    .join("&");
-}
+import { navigate } from "gatsby-link";
+import axios from "axios";
 
 const About = () => {
-  const [state, setState] = useState({});
-
-  const handleChange = (e) => {
-    setState({ ...state, [e.target.name]: e.target.value });
+  const handleServerResponse = (ok, msg, form) => {
+    if (ok) {
+      form.reset();
+    }
   };
-
-  const handleSubmit = (e) => {
+  const handleOnSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({
-        "form-name": form.getAttribute("name"),
-        ...state,
-      }),
+    axios({
+      method: "post",
+      url: "https://getform.io/f/0bce8b2a-b846-4a52-93d3-6d8b4b81ca0a",
+      data: new FormData(form),
     })
+      .then(() => {
+        handleServerResponse(true, "Thanks!", form);
+      })
       .then(() => navigate(form.getAttribute("action")))
-      .catch((error) => alert(error));
+      .catch((r) => {
+        handleServerResponse(false, r.response.data.error, form);
+      });
   };
 
   return (
@@ -73,54 +69,39 @@ const About = () => {
                     or using the form below!
                   </Message>
                   <hr />
-                  <form
+                  <MyForm
+                    autocomplete="off"
                     name="contact"
-                    method="post"
+                    method="POST"
                     data-netlify="true"
                     data-netlify-honeypot="bot-field"
-                    onSubmit={handleSubmit}
+                    action="/"
+                    onSubmit={handleOnSubmit}
                   >
-                    {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
-                    <input type="hidden" name="form-name" value="contact" />
-                    <p hidden>
-                      <label>
-                        Don’t fill this out:{" "}
-                        <input name="bot-field" onChange={handleChange} />
-                      </label>
-                    </p>
-                    <p>
-                      <label>
-                        Your name:
-                        <br />
-                        <input
-                          type="text"
-                          name="name"
-                          onChange={handleChange}
-                        />
-                      </label>
-                    </p>
-                    <p>
-                      <label>
-                        Your email:
-                        <br />
-                        <input
-                          type="email"
-                          name="email"
-                          onChange={handleChange}
-                        />
-                      </label>
-                    </p>
-                    <p>
-                      <label>
-                        Message:
-                        <br />
-                        <textarea name="message" onChange={handleChange} />
-                      </label>
-                    </p>
-                    <p>
-                      <button type="submit">Send</button>
-                    </p>
-                  </form>
+                    <ContactField
+                      type="text"
+                      id="name"
+                      name="name"
+                      placeholder="Your name.."
+                      autocomplete="off"
+                    />
+                    <ContactField
+                      type="email"
+                      id="email"
+                      name="email"
+                      placeholder="Your email..."
+                      autocomplete="off"
+                    />
+                    <Textarea
+                      type="textarea"
+                      style={{ height: "100px" }}
+                      id="body"
+                      name="body"
+                      placeholder="Write something.."
+                      autocomplete="off"
+                    />
+                    <Submit type="submit" text="Send" />
+                  </MyForm>
                 </>
               ) : (
                 <>
