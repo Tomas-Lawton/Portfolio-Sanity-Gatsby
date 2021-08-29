@@ -25,6 +25,7 @@
     "prettier": "^2.2.1"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "babel-plugin-styled-components": "^1.13.2",
     "gatsby": "^2.0.32",
     "gatsby-plugin-styled-components": "^4.12.0",
