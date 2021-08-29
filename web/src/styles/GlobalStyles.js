@@ -26,13 +26,6 @@ export const ContainHero = styled.div `
   padding: 5vw;
   width: 100%;
   transition: 500ms;
-
-  &:hover {
-    background-color: rgba(240, 240, 240, 0.3);
-  }
-  &:hover {
-    background: rgba(240, 240, 240, 0.3);
-  }
   &:hover {
     transition: 500ms;
     h1 {
@@ -42,6 +35,7 @@ export const ContainHero = styled.div `
     a {
       color: #151515;
     }
+    background-color: rgba(240, 240, 240, 0.3);
   }
 `;
 

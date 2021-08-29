@@ -43,34 +43,37 @@ const About = () => (
                 <hr />
                 <MyForm
                   autocomplete="off"
-                  action="POST" 
-                  data-netlify="true">
+                  name="contact" 
+                  method="POST" 
+                  data-netlify="true" 
+                  >
+                  <input type="hidden" name="form-name" value="contact" />
                   <ContactField
                     type="text"
-                    id="fname"
-                    name="firstname"
+                    id="name"
+                    name="name"
                     placeholder="Your name.."
                     autocomplete="off"
                   />
                   <ContactField
                     type="email"
-                    id="ename"
+                    id="email"
                     name="email"
                     placeholder="Your email..."
                     autocomplete="off"
                   />
                   <ContactField
                     type="text"
-                    id="lname"
-                    name="lastname"
+                    id="subject"
+                    name="subject"
                     placeholder="Subject..."
                     autocomplete="off"
                   />
                   <Textarea
                     type="textarea"
                     style={{ height: "100px" }}
-                    id="subject"
-                    name="subject"
+                    id="body"
+                    name="body"
                     placeholder="Write something.."
                     autocomplete="off"
                   />
