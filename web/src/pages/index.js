@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { graphql } from "gatsby";
 import GraphQLErrorList from "../components/graphql-error-list";
-import  SearchEngine from "../components/SearchEngine";
+import SearchEngine from "../components/SearchEngine";
 import Layout from "../components/Layout";
 import "../styles/GlobalDOMStyle.css";
 import LatestWorks from "../components/Home/LatestWorks";
@@ -77,7 +77,7 @@ const IndexPage = (props) => {
         keywords={site.keywords}
       />
       <ContainHero>
-        <HeroText size="5vh">
+        <HeroText className="override" size="5vh">
           Hey, I'm{" "}
           <Name>
             <span>T</span>
@@ -89,7 +89,10 @@ const IndexPage = (props) => {
           </Name>
         </HeroText>
         <HeroText size="3vh">
-          I'm a software engineer at <Accenture>Accenture</Accenture> with experience as a designer from <Atlassian>Atlassian</Atlassian>. I combine creativity with engineering and design to create novelty in robust and delightful form.
+          I'm a software engineer at <Accenture>Accenture</Accenture> with
+          experience as a designer from <Atlassian>Atlassian</Atlassian>. I
+          combine creativity with engineering and design to create novelty in
+          robust and delightful form.
         </HeroText>
         <Hyperlink to="/contact" text="Let's talk." />
       </ContainHero>
