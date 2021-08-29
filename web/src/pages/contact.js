@@ -26,15 +26,16 @@ const About = () => (
       <div style={{ width: "100%", padding: "5vh 5vw 0 5vw" }}>
         <ContactCard
           autocomplete="off"
-          action="https://formspree.io/f/xoqydkwn"
-          method="POST"
+          name="contact" 
+          method="POST" 
+          data-netlify="true"
         >
           <div style={{ width: "100%" }}>
             <Contact>Say hello</Contact>
             {window.innerWidth > 858 ? (
               <>
                 <Message>
-                  Send a message to
+                  Send a message to{" "}
                   <span
                     style={{ fontWeight: "bold", textDecoration: "underline" }}
                   >
@@ -42,10 +43,10 @@ const About = () => (
                       tomaslawton@gmail.com
                     </a>
                   </span>
-                  or using the form below!
+                  {" "}or using the form below!
                 </Message>
                 <hr />
-                <MyForm name="contact" method="POST" data-netlify="true">
+                <MyForm>
                   <ContactField
                     type="text"
                     id="fname"

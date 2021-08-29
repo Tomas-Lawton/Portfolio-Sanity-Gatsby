@@ -78,9 +78,9 @@ const IndexPage = (props) => {
       />
       <ContainHero>
         <HeroText size="5vh">
-          Hey, I'm 
+          Hey, I'm{" "}
           <Name>
-            <span> T</span>
+            <span>T</span>
             <span>o</span>
             <span>m</span>
             <span>a</span>
