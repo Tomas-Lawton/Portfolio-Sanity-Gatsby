@@ -9,10 +9,8 @@ const isProd = process.env.NODE_ENV === "production";
 
 module.exports = {
   plugins: [
-    "gatsby-plugin-postcss",
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
-    "babel-plugin-styled-components",
     {
       resolve: "gatsby-source-sanity",
       options: {
@@ -22,8 +20,7 @@ module.exports = {
         overlayDrafts: !isProd,
       },
     },
-    {
-      resolve: `gatsby-plugin-styled-components`,
-    },
+    "gatsby-plugin-styled-components",
+    "gatsby-plugin-postcss",
   ],
 };

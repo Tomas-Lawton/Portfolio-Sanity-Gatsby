@@ -80,11 +80,7 @@ const About = () => (
                   />
                   <div data-netlify-recaptcha="true"></div>
                   <div style={{ width: "100%", display: "flex" }}>
-                    <Submit
-                      type="submit"
-                      onClick={this.form.submit()}
-                      text="Send"
-                    />
+                    <Submit type="submit" text="Send" />
                   </div>
                 </MyForm>
               </>
