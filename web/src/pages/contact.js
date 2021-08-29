@@ -27,7 +27,7 @@ function encode(data) {
 }
 
 const About = () => {
-  const [state, setState] = React.useState({});
+  const [state, setState] = useState({});
 
   const handleChange = (e) => {
     setState({ ...state, [e.target.name]: e.target.value });
