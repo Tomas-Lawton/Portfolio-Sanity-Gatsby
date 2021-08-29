@@ -1,26 +1,7 @@
 import styled from "styled-components";
 import AtlassianEmoji from "../images/emojis/rocket.png";
 import AccentureEmoji from "../images/emojis/fire.png";
-export const ContainHero = styled.div `
-  // position: fixed;
-  // z-Index: 3;
-  font-weight: bold;
-  display: block;
-  background-color: #151515;
-  margin-bottom: 1vh;
-  transition: 500ms;
-  padding: 5vw;
-  width: 100%;
-  &:hover {
-    // background-color: #ffe661;
-    background: rgba(240, 240, 240, 0.3);
-    // opacity: 0.5;
-    color: #151515;
-    a {
-      color: #151515;
-    }
-  }
-`;
+
 export const Atlassian = styled.span `
   color: #0065ff;
   font-weight: bold;
@@ -34,6 +15,23 @@ export const Accenture = styled.span `
   font-weight: bold;
   &:hover {
     cursor: url(${AccentureEmoji}), pointer;
+  }
+`;
+
+export const ContainHero = styled.div `
+  font-weight: bold;
+  display: block;
+  background-color: #151515;
+  margin-bottom: 1vh;
+  transition: 500ms;
+  padding: 5vw;
+  width: 100%;
+  &:hover {
+    background: rgba(240, 240, 240, 0.3);
+    color: #151515;
+    a {
+      color: #151515;
+    }
   }
 `;
 
