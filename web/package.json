@@ -22,7 +22,7 @@
         "babel-plugin-styled-components": "^1.12.0",
         "browser-monads": "^1.0.0",
         "date-fns": "^2.19.0",
-        "gatsby": "^2.0.32",
+        "gatsby": "^3.6.2",
         "gatsby-image": "^2.0.41",
         "gatsby-plugin-image": "^1.0.0",
         "gatsby-plugin-manifest": "^2.6.1",
@@ -41,6 +41,6 @@
         "react-dom": "^17.0.2",
         "react-helmet": "^6.1.0",
         "react-simple-image-slider": "^2.1.0",
-        "styled-components": "^5.3.0"
+        "styled-components": "^4.4.1"
     }
 }
