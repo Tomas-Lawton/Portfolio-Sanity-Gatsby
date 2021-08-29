@@ -24,12 +24,7 @@ const About = () => (
     <SearchEngine title="Contact" />
     <div style={{ background: "#151515", height: "100%", width: "100%" }}>
       <div style={{ width: "100%", padding: "5vh 5vw 0 5vw" }}>
-        <ContactCard
-          autocomplete="off"
-          name="contact" 
-          method="POST" 
-          data-netlify="true"
-        >
+        <ContactCard>
           <div style={{ width: "100%" }}>
             <Contact>Say hello</Contact>
             {window.innerWidth > 858 ? (
@@ -46,7 +41,11 @@ const About = () => (
                   {" "}or using the form below!
                 </Message>
                 <hr />
-                <MyForm>
+                <MyForm
+                  autocomplete="off"
+                  name="contact" 
+                  method="POST" 
+                  data-netlify="true">
                   <ContactField
                     type="text"
                     id="fname"

@@ -23,15 +23,18 @@ export const ContainHero = styled.div `
   display: block;
   background-color: #151515;
   margin-bottom: 1vh;
-  transition: 500ms;
   padding: 5vw;
   width: 100%;
   &:hover {
+    transition: 500ms;
     background-color: rgba(240, 240, 240, 0.3);
-    color: #151515;
-    .gatsby-workaround {
+  }
+  &:hover {
+    transition: 500ms;
+    h1 {
       color: #151515;
     }
+    color: #151515;
     a {
       color: #151515;
     }
@@ -44,9 +47,7 @@ export const Name = styled.span `
     span {
       position: relative;
       top: 8px;
-      // display: inline-block;
       animation: bounce 0.4s ease infinite alternate;
-      color: #000;
     }
     span:nth-child(1) {
       animation-delay: 0s;
@@ -231,15 +232,11 @@ export const FullContainer = styled.div `
   display: flex;
   justify-content: center;
   align-items: center;
-  // padding: 5vw;
 `;
 
 export const ContactCard = styled.div `
   display: flex;
   flex-direction: column;
-  // width: 100%;
-  // background: #131313;
-  // box-shadow: 1px 6px 17px 3px rgba(0, 0, 0, 0.37);
   padding: 2vw;
 `;
 
