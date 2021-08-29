@@ -3,6 +3,7 @@ import "../styles/GlobalDOMStyle.css";
 import Layout from "../components/Layout";
 import SearchEngine from "../components/SearchEngine";
 import Submit from "../components/Common/Submit";
+import { navigate } from "gatsby-link";
 import {
   ContactCard,
   ContactField,
@@ -26,7 +27,7 @@ function encode(data) {
 }
 
 const About = () => {
-  const [state, setState] = React.useState({});
+  const [state, setState] = useState({});
 
   const handleChange = (e) => {
     setState({ ...state, [e.target.name]: e.target.value });
@@ -75,7 +76,7 @@ const About = () => {
                   <form
                     name="contact"
                     method="post"
-                    action="/thanks/"
+                    action="/"
                     data-netlify="true"
                     data-netlify-honeypot="bot-field"
                     onSubmit={handleSubmit}

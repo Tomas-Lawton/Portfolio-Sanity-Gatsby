@@ -76,8 +76,8 @@ const IndexPage = (props) => {
         description={site.description}
         keywords={site.keywords}
       />
-      <ContainHero>
-        <HeroText className="override" size="5vh">
+      <ContainHero className="override">
+        <HeroText size="5vh">
           Hey, I'm{" "}
           <Name>
             <span>T</span>
