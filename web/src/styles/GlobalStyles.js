@@ -27,8 +27,11 @@ export const ContainHero = styled.div `
   padding: 5vw;
   width: 100%;
   &:hover {
-    background: rgba(240, 240, 240, 0.3);
+    background-color: rgba(240, 240, 240, 0.3);
     color: #151515;
+    .gatsby-workaround {
+      color: #151515;
+    }
     a {
       color: #151515;
     }
