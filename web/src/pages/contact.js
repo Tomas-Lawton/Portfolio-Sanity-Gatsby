@@ -43,8 +43,7 @@ const About = () => (
                 <hr />
                 <MyForm
                   autocomplete="off"
-                  name="contact" 
-                  method="POST" 
+                  action="POST" 
                   data-netlify="true">
                   <ContactField
                     type="text"
@@ -75,6 +74,7 @@ const About = () => (
                     placeholder="Write something.."
                     autocomplete="off"
                   />
+                  <div data-netlify-recaptcha="true"></div>
                 </MyForm>
                 <div style={{ width: "100%", display: "flex" }}>
                   <Submit text="Send"/>

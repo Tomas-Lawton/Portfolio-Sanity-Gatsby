@@ -25,9 +25,13 @@ export const ContainHero = styled.div `
   margin-bottom: 1vh;
   padding: 5vw;
   width: 100%;
+  transition: 500ms;
+
   &:hover {
-    transition: 500ms;
     background-color: rgba(240, 240, 240, 0.3);
+  }
+  &:hover {
+    background: rgba(240, 240, 240, 0.3);
   }
   &:hover {
     transition: 500ms;
