@@ -80,7 +80,7 @@ const IndexPage = (props) => {
         <HeroText size="5vh">
           Hey, I'm 
           <Name>
-            <span>T</span>
+            <span> T</span>
             <span>o</span>
             <span>m</span>
             <span>a</span>
@@ -89,10 +89,7 @@ const IndexPage = (props) => {
           </Name>
         </HeroText>
         <HeroText size="3vh">
-          I'm an <Atlassian>ex-Atlassian</Atlassian> creative engineer at 
-          <Accenture>Accenture</Accenture>. I combine lateral thinking with
-          outstanding technical skills to design, build and test delightful
-          products.
+          I'm a software engineer at <Accenture>Accenture</Accenture> with experience as a designer from <Atlassian>Atlassian</Atlassian>. I combine creativity with engineering and design to create novelty in robust and delightful form.
         </HeroText>
         <Hyperlink to="/contact" text="Let's talk." />
       </ContainHero>
